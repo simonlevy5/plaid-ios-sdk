@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		536B151D1BB72C8F004A026E /* Plaid.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 536B151C1BB72C8F004A026E /* Plaid.h */; };
+		536B151F1BB72C8F004A026E /* Plaid.m in Sources */ = {isa = PBXBuildFile; fileRef = 536B151E1BB72C8F004A026E /* Plaid.m */; };
+		536B15271BBC8D3D004A026E /* PLDNetworkApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 536B15261BBC8D3D004A026E /* PLDNetworkApi.m */; settings = {ASSET_TAGS = (); }; };
+		538716BD1BCD7D6200DEE44B /* PLDInstitution.m in Sources */ = {isa = PBXBuildFile; fileRef = 538716BC1BCD7D6200DEE44B /* PLDInstitution.m */; settings = {ASSET_TAGS = (); }; };
+		53994A401BD949A50083B4CB /* PLDAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A3F1BD949A50083B4CB /* PLDAccount.m */; settings = {ASSET_TAGS = (); }; };
+		53994A431BD94EC40083B4CB /* PLDTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A421BD94EC40083B4CB /* PLDTransaction.m */; settings = {ASSET_TAGS = (); }; };
+		53994A461BD9532C0083B4CB /* PLDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A451BD9532C0083B4CB /* PLDCategory.m */; settings = {ASSET_TAGS = (); }; };
+		53994A491BD964450083B4CB /* PLDAuthResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A481BD964450083B4CB /* PLDAuthResponse.m */; settings = {ASSET_TAGS = (); }; };
+		53994A4C1BD964760083B4CB /* PLDConnectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A4B1BD964760083B4CB /* PLDConnectResponse.m */; settings = {ASSET_TAGS = (); }; };
+		53B925FD1BD061F70059ABA3 /* PLDAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B925FC1BD061F70059ABA3 /* PLDAuthentication.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		536B15171BB72C8F004A026E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				536B151D1BB72C8F004A026E /* Plaid.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		536B15191BB72C8F004A026E /* libPlaid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPlaid.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		536B151C1BB72C8F004A026E /* Plaid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plaid.h; sourceTree = "<group>"; };
+		536B151E1BB72C8F004A026E /* Plaid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plaid.m; sourceTree = "<group>"; };
+		536B15251BBC8D3D004A026E /* PLDNetworkApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDNetworkApi.h; sourceTree = "<group>"; };
+		536B15261BBC8D3D004A026E /* PLDNetworkApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDNetworkApi.m; sourceTree = "<group>"; };
+		536B15281BBC8F7B004A026E /* PLDDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDDefines.h; sourceTree = "<group>"; };
+		538716BB1BCD7D6200DEE44B /* PLDInstitution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDInstitution.h; sourceTree = "<group>"; };
+		538716BC1BCD7D6200DEE44B /* PLDInstitution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDInstitution.m; sourceTree = "<group>"; };
+		53994A3E1BD949A50083B4CB /* PLDAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDAccount.h; sourceTree = "<group>"; };
+		53994A3F1BD949A50083B4CB /* PLDAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDAccount.m; sourceTree = "<group>"; };
+		53994A411BD94EC40083B4CB /* PLDTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDTransaction.h; sourceTree = "<group>"; };
+		53994A421BD94EC40083B4CB /* PLDTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDTransaction.m; sourceTree = "<group>"; };
+		53994A441BD9532C0083B4CB /* PLDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDCategory.h; sourceTree = "<group>"; };
+		53994A451BD9532C0083B4CB /* PLDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDCategory.m; sourceTree = "<group>"; };
+		53994A471BD964450083B4CB /* PLDAuthResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDAuthResponse.h; sourceTree = "<group>"; };
+		53994A481BD964450083B4CB /* PLDAuthResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDAuthResponse.m; sourceTree = "<group>"; };
+		53994A4A1BD964760083B4CB /* PLDConnectResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDConnectResponse.h; sourceTree = "<group>"; };
+		53994A4B1BD964760083B4CB /* PLDConnectResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDConnectResponse.m; sourceTree = "<group>"; };
+		53B925FB1BD061F70059ABA3 /* PLDAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDAuthentication.h; sourceTree = "<group>"; };
+		53B925FC1BD061F70059ABA3 /* PLDAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDAuthentication.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		536B15161BB72C8F004A026E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		536B15101BB72C8F004A026E = {
+			isa = PBXGroup;
+			children = (
+				536B151B1BB72C8F004A026E /* Plaid */,
+				536B151A1BB72C8F004A026E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		536B151A1BB72C8F004A026E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				536B15191BB72C8F004A026E /* libPlaid.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		536B151B1BB72C8F004A026E /* Plaid */ = {
+			isa = PBXGroup;
+			children = (
+				536B151C1BB72C8F004A026E /* Plaid.h */,
+				536B151E1BB72C8F004A026E /* Plaid.m */,
+				53994A3E1BD949A50083B4CB /* PLDAccount.h */,
+				53994A3F1BD949A50083B4CB /* PLDAccount.m */,
+				53B925FB1BD061F70059ABA3 /* PLDAuthentication.h */,
+				53B925FC1BD061F70059ABA3 /* PLDAuthentication.m */,
+				53994A471BD964450083B4CB /* PLDAuthResponse.h */,
+				53994A481BD964450083B4CB /* PLDAuthResponse.m */,
+				53994A441BD9532C0083B4CB /* PLDCategory.h */,
+				53994A451BD9532C0083B4CB /* PLDCategory.m */,
+				53994A4A1BD964760083B4CB /* PLDConnectResponse.h */,
+				53994A4B1BD964760083B4CB /* PLDConnectResponse.m */,
+				536B15281BBC8F7B004A026E /* PLDDefines.h */,
+				536B15251BBC8D3D004A026E /* PLDNetworkApi.h */,
+				536B15261BBC8D3D004A026E /* PLDNetworkApi.m */,
+				538716BB1BCD7D6200DEE44B /* PLDInstitution.h */,
+				538716BC1BCD7D6200DEE44B /* PLDInstitution.m */,
+				53994A411BD94EC40083B4CB /* PLDTransaction.h */,
+				53994A421BD94EC40083B4CB /* PLDTransaction.m */,
+			);
+			path = Plaid;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		536B15181BB72C8F004A026E /* Plaid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 536B15221BB72C8F004A026E /* Build configuration list for PBXNativeTarget "Plaid" */;
+			buildPhases = (
+				536B15151BB72C8F004A026E /* Sources */,
+				536B15161BB72C8F004A026E /* Frameworks */,
+				536B15171BB72C8F004A026E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Plaid;
+			productName = Plaid;
+			productReference = 536B15191BB72C8F004A026E /* libPlaid.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		536B15111BB72C8F004A026E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Vouch Financial, Inc.";
+				TargetAttributes = {
+					536B15181BB72C8F004A026E = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 536B15141BB72C8F004A026E /* Build configuration list for PBXProject "Plaid" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 536B15101BB72C8F004A026E;
+			productRefGroup = 536B151A1BB72C8F004A026E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				536B15181BB72C8F004A026E /* Plaid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		536B15151BB72C8F004A026E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53994A401BD949A50083B4CB /* PLDAccount.m in Sources */,
+				536B15271BBC8D3D004A026E /* PLDNetworkApi.m in Sources */,
+				538716BD1BCD7D6200DEE44B /* PLDInstitution.m in Sources */,
+				53994A4C1BD964760083B4CB /* PLDConnectResponse.m in Sources */,
+				53994A461BD9532C0083B4CB /* PLDCategory.m in Sources */,
+				53994A431BD94EC40083B4CB /* PLDTransaction.m in Sources */,
+				53994A491BD964450083B4CB /* PLDAuthResponse.m in Sources */,
+				53B925FD1BD061F70059ABA3 /* PLDAuthentication.m in Sources */,
+				536B151F1BB72C8F004A026E /* Plaid.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		536B15201BB72C8F004A026E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		536B15211BB72C8F004A026E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		536B15231BB72C8F004A026E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Plaid/Plaid-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		536B15241BB72C8F004A026E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Plaid/Plaid-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		536B15141BB72C8F004A026E /* Build configuration list for PBXProject "Plaid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				536B15201BB72C8F004A026E /* Debug */,
+				536B15211BB72C8F004A026E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		536B15221BB72C8F004A026E /* Build configuration list for PBXNativeTarget "Plaid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				536B15231BB72C8F004A026E /* Debug */,
+				536B15241BB72C8F004A026E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 536B15111BB72C8F004A026E /* Project object */;
+}
