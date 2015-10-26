@@ -1,7 +1,7 @@
 ## plaid-ios-sdk
 Plaid iOS framework
 
-A library to develop against the Plaid API from an iOS app. For more information about Plaid, visit [the website][http://plaid.com] or check out [the documentation][https://plaid.com/docs/].
+A library to develop against the Plaid API from an iOS app. For more information about Plaid, visit [the website](http://plaid.com) or check out [the documentation](https://plaid.com/docs/).
 
 ## Getting Started
 
