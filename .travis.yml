@@ -5,3 +5,5 @@ cache:
 xcode_workspace: Plaid.xcworkspace
 podfile: Tests/Podfile
 xcode_scheme: ios
+before_install:
+- gem install cocoapods -v '0.39.0'
