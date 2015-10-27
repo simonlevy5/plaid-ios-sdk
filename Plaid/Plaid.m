@@ -187,7 +187,7 @@ static Plaid *sInstance = nil;
                                   [[PLDCategory alloc] initWithCategoryDictionary:category];
                                [categories addObject:obj];
                              }
-                             completion(response, error);
+                             completion(categories, error);
                            }];
 }
 
@@ -256,14 +256,14 @@ static Plaid *sInstance = nil;
                                method:@"POST"
                            parameters:[self authenticatedParametersWithDictionary:parameters]
                            completion:^(NSDictionary *response, NSError *error) {
-                             if (response && [response objectForKey:@"mfa"]) {
+                             if (error) {
                                completion(nil, response, error);
                                return;
                              }
                              PLDAuthentication *authentication =
                                  [[PLDAuthentication alloc] initWithProduct:upgradeTo
                                                                    response:response];
-                             completion(authentication, nil, error);
+                             completion(authentication, response, nil);
                            }];
 }
 
@@ -352,7 +352,7 @@ static Plaid *sInstance = nil;
                              PLDAuthentication *authentication =
                                  [[PLDAuthentication alloc] initWithProduct:product
                                                                    response:response];
-                             completion(authentication, nil, error);
+                             completion(authentication, response, error);
                            }];
 }
 
@@ -408,7 +408,7 @@ static Plaid *sInstance = nil;
                              PLDAuthentication *authentication =
                                  [[PLDAuthentication alloc] initWithProduct:product
                                                                    response:response];
-                             completion(authentication, nil, error);
+                             completion(authentication, response, error);
                            }];
 }
 
@@ -438,7 +438,7 @@ static Plaid *sInstance = nil;
                              PLDAuthentication *authentication =
                                  [[PLDAuthentication alloc] initWithProduct:product
                                                                    response:response];
-                             completion(authentication, nil, error);
+                             completion(authentication, response, error);
                            }];
 }
 

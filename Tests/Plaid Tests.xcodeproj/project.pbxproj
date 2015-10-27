@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		501060AA3877960335008552 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 303F6ECB577BFA2E00BAA4D0 /* libPods-ios.a */; };
+		5369A5281BDEBD7E006829D5 /* PlaidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A5271BDEBD7E006829D5 /* PlaidTests.m */; settings = {ASSET_TAGS = (); }; };
+		5369A52B1BDEE6D9006829D5 /* PLDUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A52A1BDEE6D9006829D5 /* PLDUnitTest.m */; settings = {ASSET_TAGS = (); }; };
+		5369A52E1BDEE7D4006829D5 /* Plaid+Mocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A52D1BDEE7D4006829D5 /* Plaid+Mocks.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		15A2F0F97D78F7CCA95691C5 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
+		303F6ECB577BFA2E00BAA4D0 /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4940AA48F4D7CA5C739C7F4F /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		5369A50E1BDEBA67006829D5 /* ios.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5369A5121BDEBA67006829D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5369A5231BDEBD2F006829D5 /* libplaid-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libplaid-ios.a"; path = "Pods/../build/Debug-iphoneos/libplaid-ios.a"; sourceTree = "<group>"; };
+		5369A5271BDEBD7E006829D5 /* PlaidTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaidTests.m; sourceTree = "<group>"; };
+		5369A5291BDEE6D9006829D5 /* PLDUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDUnitTest.h; sourceTree = "<group>"; };
+		5369A52A1BDEE6D9006829D5 /* PLDUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDUnitTest.m; sourceTree = "<group>"; };
+		5369A52C1BDEE7D4006829D5 /* Plaid+Mocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Plaid+Mocks.h"; sourceTree = "<group>"; };
+		5369A52D1BDEE7D4006829D5 /* Plaid+Mocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Plaid+Mocks.m"; sourceTree = "<group>"; };
+		5369A52F1BDEECB2006829D5 /* PLDMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLDMacros.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5369A50B1BDEBA67006829D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				501060AA3877960335008552 /* libPods-ios.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5369A4F51BDEB95F006829D5 = {
+			isa = PBXGroup;
+			children = (
+				5369A50F1BDEBA67006829D5 /* ios */,
+				5369A4FF1BDEB95F006829D5 /* Products */,
+				F54893FCB4BED1140C921036 /* Pods */,
+				A8E6C0675A8FE95343315A53 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5369A4FF1BDEB95F006829D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5369A50E1BDEBA67006829D5 /* ios.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5369A50F1BDEBA67006829D5 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				5369A5121BDEBA67006829D5 /* Info.plist */,
+				5369A5271BDEBD7E006829D5 /* PlaidTests.m */,
+				5369A5291BDEE6D9006829D5 /* PLDUnitTest.h */,
+				5369A52A1BDEE6D9006829D5 /* PLDUnitTest.m */,
+				5369A52F1BDEECB2006829D5 /* PLDMacros.h */,
+				5369A52C1BDEE7D4006829D5 /* Plaid+Mocks.h */,
+				5369A52D1BDEE7D4006829D5 /* Plaid+Mocks.m */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		A8E6C0675A8FE95343315A53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5369A5231BDEBD2F006829D5 /* libplaid-ios.a */,
+				303F6ECB577BFA2E00BAA4D0 /* libPods-ios.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F54893FCB4BED1140C921036 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4940AA48F4D7CA5C739C7F4F /* Pods-ios.debug.xcconfig */,
+				15A2F0F97D78F7CCA95691C5 /* Pods-ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5369A50D1BDEBA67006829D5 /* ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5369A5131BDEBA67006829D5 /* Build configuration list for PBXNativeTarget "ios" */;
+			buildPhases = (
+				ADF3D0297C89AFE79EF3CF82 /* Check Pods Manifest.lock */,
+				5369A50A1BDEBA67006829D5 /* Sources */,
+				5369A50B1BDEBA67006829D5 /* Frameworks */,
+				5369A50C1BDEBA67006829D5 /* Resources */,
+				97E05FDB7742BDA12F764780 /* Embed Pods Frameworks */,
+				DC3EE04A1E88C4B4B298C130 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ios;
+			productName = ios;
+			productReference = 5369A50E1BDEBA67006829D5 /* ios.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5369A4F61BDEB95F006829D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					5369A50D1BDEBA67006829D5 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 5369A4F91BDEB95F006829D5 /* Build configuration list for PBXProject "Plaid Tests" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5369A4F51BDEB95F006829D5;
+			productRefGroup = 5369A4FF1BDEB95F006829D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5369A50D1BDEBA67006829D5 /* ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5369A50C1BDEBA67006829D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		97E05FDB7742BDA12F764780 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADF3D0297C89AFE79EF3CF82 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DC3EE04A1E88C4B4B298C130 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5369A50A1BDEBA67006829D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5369A52B1BDEE6D9006829D5 /* PLDUnitTest.m in Sources */,
+				5369A52E1BDEE7D4006829D5 /* Plaid+Mocks.m in Sources */,
+				5369A5281BDEBD7E006829D5 /* PlaidTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5369A5051BDEB95F006829D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5369A5061BDEB95F006829D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5369A5141BDEBA67006829D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4940AA48F4D7CA5C739C7F4F /* Pods-ios.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = ios/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.plaid.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5369A5151BDEBA67006829D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15A2F0F97D78F7CCA95691C5 /* Pods-ios.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = ios/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.plaid.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5369A4F91BDEB95F006829D5 /* Build configuration list for PBXProject "Plaid Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5369A5051BDEB95F006829D5 /* Debug */,
+				5369A5061BDEB95F006829D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5369A5131BDEBA67006829D5 /* Build configuration list for PBXNativeTarget "ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5369A5141BDEBA67006829D5 /* Debug */,
+				5369A5151BDEBA67006829D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5369A4F61BDEB95F006829D5 /* Project object */;
+}

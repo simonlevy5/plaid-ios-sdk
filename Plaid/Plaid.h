@@ -11,11 +11,13 @@
 #import "PLDAccount.h"
 #import "PLDAuthentication.h"
 #import "PLDAuthResponse.h"
-#import "PLDCategory.h"
 #import "PLDConnectResponse.h"
+#import "PLDCategory.h"
 #import "PLDDefines.h"
 #import "PLDInstitution.h"
 #import "PLDTransaction.h"
+
+@class PLDNetworkApi;
 
 /*
  Completion handler called upon completion of actions for users that are already logged in.
@@ -65,6 +67,11 @@ typedef void (^PlaidMfaCompletion)(PLDAuthentication *authentication, id respons
  @see PLDDefines.h to see options
  */
 @property(nonatomic, assign) PlaidEnvironment environment;
+
+/*
+ The network API being used for this instance of 'Plaid'.
+ */
+@property(nonatomic, readonly) PLDNetworkApi *networkApi;
 
 /*
  Configure this instance of 'Plaid' with a clientId and secret, whic is obtained via https://dashboard.plaid.com/signup/

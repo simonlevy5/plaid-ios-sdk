@@ -74,7 +74,6 @@
 
 - (instancetype)initWithProduct:(PlaidProduct)product response:(NSDictionary *)response {
   if (self = [super init]) {
-    NSLog(@"Creating Authentication with response: %@", response);
     _product = product;
     _accessToken = response[@"access_token"];
     if (response[@"mfa"]) {
