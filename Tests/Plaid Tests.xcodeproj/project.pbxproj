@@ -297,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4940AA48F4D7CA5C739C7F4F /* Pods-ios.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.plaid.ios;
@@ -308,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 15A2F0F97D78F7CCA95691C5 /* Pods-ios.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.plaid.ios;

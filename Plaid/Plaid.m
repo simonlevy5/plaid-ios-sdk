@@ -19,6 +19,7 @@ static Plaid *sInstance = nil;
 
   PLDNetworkApi *_networkApi;
 }
+
 @synthesize environment = _environment;
 
 + (Plaid *)sharedInstance {

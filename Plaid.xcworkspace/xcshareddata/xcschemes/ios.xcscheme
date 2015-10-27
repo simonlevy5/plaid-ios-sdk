@@ -17,7 +17,7 @@
                BlueprintIdentifier = "5369A50D1BDEBA67006829D5"
                BuildableName = "ios.xctest"
                BlueprintName = "ios"
-               ReferencedContainer = "container:Plaid Tests.xcodeproj">
+               ReferencedContainer = "container:Tests/Plaid Tests.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,7 +36,7 @@
                BlueprintIdentifier = "5369A50D1BDEBA67006829D5"
                BuildableName = "ios.xctest"
                BlueprintName = "ios"
-               ReferencedContainer = "container:Plaid Tests.xcodeproj">
+               ReferencedContainer = "container:Tests/Plaid Tests.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +46,7 @@
             BlueprintIdentifier = "5369A50D1BDEBA67006829D5"
             BuildableName = "ios.xctest"
             BlueprintName = "ios"
-            ReferencedContainer = "container:Plaid Tests.xcodeproj">
+            ReferencedContainer = "container:Tests/Plaid Tests.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -67,7 +68,7 @@
             BlueprintIdentifier = "5369A50D1BDEBA67006829D5"
             BuildableName = "ios.xctest"
             BlueprintName = "ios"
-            ReferencedContainer = "container:Plaid Tests.xcodeproj">
+            ReferencedContainer = "container:Tests/Plaid Tests.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -85,7 +86,7 @@
             BlueprintIdentifier = "5369A50D1BDEBA67006829D5"
             BuildableName = "ios.xctest"
             BlueprintName = "ios"
-            ReferencedContainer = "container:Plaid Tests.xcodeproj">
+            ReferencedContainer = "container:Tests/Plaid Tests.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
