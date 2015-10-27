@@ -1,3 +1,5 @@
+[![Build Status](https://magnum.travis-ci.com/vouch/plaid-ios-sdk.svg?token=d9FSzqpZpyWCYnF5YjqQ&branch=master)](https://magnum.travis-ci.com/vouch/plaid-ios-sdk)
+
 ## plaid-ios-sdk
 Plaid iOS framework
 
