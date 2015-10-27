@@ -15,6 +15,7 @@
 #import "PLDCategory.h"
 #import "PLDDefines.h"
 #import "PLDInstitution.h"
+#import "PLDLongTailInstitution.h"
 #import "PLDTransaction.h"
 
 @class PLDNetworkApi;
@@ -369,6 +370,32 @@ typedef void (^PlaidMfaCompletion)(PLDAuthentication *authentication, id respons
  @see https://plaid.com/docs/#institutions
  */
 - (void)getInstitutionsWithCompletion:(PlaidCompletion)completion;
+
+/*
+ Search long-tail institutions, which are not returned by the getInstitutions method. This returns an array of PLDLongTailInstitution objects on success.
+ 
+ @param query The query string to match against the full list of institutions. This includes partial matches.
+ @param product An optional filter by Plaid product. Pass 0, or PlaidProductUnknown to not filter.
+ @param completion The completion handler called when this request finishes. This will contain an array of PLDLongTailInstitution objects on success.
+ 
+ @see PlaidCompletion
+ @see https://plaid.com/docs/#institution-search
+ */
+- (void)getLongTailInstitutionsWithQuery:(NSString *)query
+                                 product:(PlaidProduct)product
+                              completion:(PlaidCompletion)completion;
+
+/*
+ Search long-tail institutions by the identifier of an institution (e.g. bofa). This returns an array of PLDLongTailInstitution objects on success.
+ 
+ @param institutionId The id of a single institution for lookup.
+ @param completion The completion handler called when this request finishes. This will contain an array of PLDInstitution objects on success.
+ 
+ @see PlaidCompletion
+ @see https://plaid.com/docs/#institution-search
+ */
+- (void)getLongTailInstitutionsById:(NSString *)institutionId
+                         completion:(PlaidCompletion)completion;
 
 /*
  Exchange a public token obtained from the Plaid Link product for an access token.

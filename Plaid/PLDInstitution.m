@@ -8,6 +8,8 @@
 
 #import "PLDInstitution.h"
 
+#import "UIColor+Utilities.h"
+
 @implementation PLDInstitution
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
@@ -38,28 +40,24 @@
 
   dispatch_once(&oncePredicate, ^{
     backgroundColors = @{
-      @"amex": [self colorWithRed:0 green:135 blue:196],
-      @"bofa": [self colorWithRed:233 green:45 blue:13],
-      @"capone360": [self colorWithRed:161 green:40 blue:49],
-      @"chase": [self colorWithRed:23 green:93 blue:165],
-      @"citi": [self colorWithRed:9 green:40 blue:105],
-      @"fidelity": [self colorWithRed:63 green:152 blue:26],
-      @"nfcu": [self colorWithRed:10 green:68 blue:125],
-      @"pnc": [self colorWithRed:14 green:105 blue:170],
-      @"schwab": [self colorWithRed:0 green:140 blue:218],
-      @"suntrust": [self colorWithRed:0 green:74 blue:128],
-      @"svb": [self colorWithRed:0 green:160 blue:228],
-      @"td": [self colorWithRed:33 green:170 blue:33],
-      @"us": [self colorWithRed:12 green:32 blue:116],
-      @"usaa": [self colorWithRed:0 green:54 blue:91],
-      @"wells": [self colorWithRed:230 green:34 blue:39]};
+      @"amex": [UIColor colorWithRgbaRed:0 green:135 blue:196],
+      @"bofa": [UIColor colorWithRgbaRed:233 green:45 blue:13],
+      @"capone360": [UIColor colorWithRgbaRed:161 green:40 blue:49],
+      @"chase": [UIColor colorWithRgbaRed:23 green:93 blue:165],
+      @"citi": [UIColor colorWithRgbaRed:9 green:40 blue:105],
+      @"fidelity": [UIColor colorWithRgbaRed:63 green:152 blue:26],
+      @"nfcu": [UIColor colorWithRgbaRed:10 green:68 blue:125],
+      @"pnc": [UIColor colorWithRgbaRed:14 green:105 blue:170],
+      @"schwab": [UIColor colorWithRgbaRed:0 green:140 blue:218],
+      @"suntrust": [UIColor colorWithRgbaRed:0 green:74 blue:128],
+      @"svb": [UIColor colorWithRgbaRed:0 green:160 blue:228],
+      @"td": [UIColor colorWithRgbaRed:33 green:170 blue:33],
+      @"us": [UIColor colorWithRgbaRed:12 green:32 blue:116],
+      @"usaa": [UIColor colorWithRgbaRed:0 green:54 blue:91],
+      @"wells": [UIColor colorWithRgbaRed:230 green:34 blue:39]};
   });
 
   return backgroundColors;
-}
-
-+ (UIColor *)colorWithRed:(int)red green:(int)green blue:(int)blue {
-  return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1];
 }
 
 @end

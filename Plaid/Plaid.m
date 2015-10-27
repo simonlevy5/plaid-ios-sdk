@@ -169,7 +169,6 @@ static Plaid *sInstance = nil;
                                completion(nil, error);
                                return;
                              }
-
                              PLDCategory *category =
                                 [[PLDCategory alloc] initWithCategoryDictionary:response];
                              completion(category, nil);
@@ -181,6 +180,10 @@ static Plaid *sInstance = nil;
                                method:@"GET"
                            parameters:nil
                            completion:^(NSDictionary *response, NSError *error) {
+                             if (error) {
+                               completion(nil, error);
+                               return;
+                             }
                              NSMutableArray *categories =
                                  [NSMutableArray arrayWithCapacity:response.count];
                              for (NSDictionary *category in response) {
@@ -188,7 +191,7 @@ static Plaid *sInstance = nil;
                                   [[PLDCategory alloc] initWithCategoryDictionary:category];
                                [categories addObject:obj];
                              }
-                             completion(categories, error);
+                             completion(categories, nil);
                            }];
 }
 
@@ -213,11 +216,62 @@ static Plaid *sInstance = nil;
                                method:@"GET"
                            parameters:nil
                            completion:^(NSArray *response, NSError *error) {
-                             NSMutableArray *objects = [NSMutableArray arrayWithCapacity:response.count];
+                             if (error) {
+                               completion(nil, error);
+                               return;
+                             }
+                             NSMutableArray *objects = [NSMutableArray arrayWithCapacity:[response count]];
                              for (NSDictionary *institution in response) {
                                [objects addObject:[[PLDInstitution alloc] initWithDictionary:institution]];
                              }
-                             completion(objects, error);
+                             completion(objects, nil);
+                           }];
+}
+
+- (void)getLongTailInstitutionsWithQuery:(NSString *)query
+                                 product:(PlaidProduct)product
+                              completion:(PlaidCompletion)completion {
+  NSMutableDictionary *params = [NSMutableDictionary dictionary];
+  params[@"q"] = query;
+  if (product) {
+    params[@"p"] = NSStringFromPlaidProduct(product);
+  }
+  [_networkApi executeRequestWithPath:@"institutions/search"
+                               method:@"GET"
+                           parameters:params
+                           completion:^(id response, NSError *error) {
+                             if (error) {
+                               completion(nil, error);
+                               return;
+                             }
+                             
+                             NSMutableArray *objects = [NSMutableArray arrayWithCapacity:[response count]];
+                             for (NSDictionary *institution in response) {
+                               [objects addObject:[[PLDLongTailInstitution alloc] initWithDictionary:institution]];
+                             }
+                             completion(objects, nil);
+  }];
+}
+
+- (void)getLongTailInstitutionsById:(NSString *)institutionId
+                         completion:(PlaidCompletion)completion {
+  NSDictionary *params = @{
+    @"id" : institutionId
+  };
+  [_networkApi executeRequestWithPath:@"institutions/search"
+                               method:@"GET"
+                           parameters:params
+                           completion:^(id response, NSError *error) {
+                             if (error) {
+                               completion(nil, error);
+                               return;
+                             }
+                             
+                             NSMutableArray *objects = [NSMutableArray arrayWithCapacity:[response count]];
+                             for (NSDictionary *institution in response) {
+                               [objects addObject:[[PLDLongTailInstitution alloc] initWithDictionary:institution]];
+                             }
+                             completion(objects, nil);
                            }];
 }
 

@@ -12,7 +12,7 @@ typedef NS_ENUM(NSUInteger, PlaidEnvironment) {
 };
 
 typedef NS_ENUM(NSUInteger, PlaidProduct) {
-  PlaidProductUnknown,
+  PlaidProductUnknown = 0,
   PlaidProductAuth,
   PlaidProductConnect
 };

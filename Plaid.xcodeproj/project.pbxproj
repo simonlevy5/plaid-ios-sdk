@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5369A5321BE0331C006829D5 /* PLDLongTailInstitution.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A5311BE0331C006829D5 /* PLDLongTailInstitution.m */; settings = {ASSET_TAGS = (); }; };
+		5369A5381BE03B83006829D5 /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A5371BE03B83006829D5 /* UIColor+Utilities.m */; settings = {ASSET_TAGS = (); }; };
 		536B151D1BB72C8F004A026E /* Plaid.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 536B151C1BB72C8F004A026E /* Plaid.h */; };
 		536B151F1BB72C8F004A026E /* Plaid.m in Sources */ = {isa = PBXBuildFile; fileRef = 536B151E1BB72C8F004A026E /* Plaid.m */; };
 		536B15271BBC8D3D004A026E /* PLDNetworkApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 536B15261BBC8D3D004A026E /* PLDNetworkApi.m */; settings = {ASSET_TAGS = (); }; };
@@ -33,6 +35,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5369A5301BE0331C006829D5 /* PLDLongTailInstitution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLongTailInstitution.h; sourceTree = "<group>"; };
+		5369A5311BE0331C006829D5 /* PLDLongTailInstitution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLongTailInstitution.m; sourceTree = "<group>"; };
+		5369A5361BE03B83006829D5 /* UIColor+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utilities.h"; sourceTree = "<group>"; };
+		5369A5371BE03B83006829D5 /* UIColor+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
 		536B15191BB72C8F004A026E /* libPlaid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPlaid.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		536B151C1BB72C8F004A026E /* Plaid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plaid.h; sourceTree = "<group>"; };
 		536B151E1BB72C8F004A026E /* Plaid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plaid.m; sourceTree = "<group>"; };
@@ -98,12 +104,16 @@
 				53994A4A1BD964760083B4CB /* PLDConnectResponse.h */,
 				53994A4B1BD964760083B4CB /* PLDConnectResponse.m */,
 				536B15281BBC8F7B004A026E /* PLDDefines.h */,
+				5369A5301BE0331C006829D5 /* PLDLongTailInstitution.h */,
+				5369A5311BE0331C006829D5 /* PLDLongTailInstitution.m */,
 				536B15251BBC8D3D004A026E /* PLDNetworkApi.h */,
 				536B15261BBC8D3D004A026E /* PLDNetworkApi.m */,
 				538716BB1BCD7D6200DEE44B /* PLDInstitution.h */,
 				538716BC1BCD7D6200DEE44B /* PLDInstitution.m */,
 				53994A411BD94EC40083B4CB /* PLDTransaction.h */,
 				53994A421BD94EC40083B4CB /* PLDTransaction.m */,
+				5369A5361BE03B83006829D5 /* UIColor+Utilities.h */,
+				5369A5371BE03B83006829D5 /* UIColor+Utilities.m */,
 			);
 			path = Plaid;
 			sourceTree = "<group>";
@@ -168,6 +178,7 @@
 			files = (
 				53994A401BD949A50083B4CB /* PLDAccount.m in Sources */,
 				536B15271BBC8D3D004A026E /* PLDNetworkApi.m in Sources */,
+				5369A5381BE03B83006829D5 /* UIColor+Utilities.m in Sources */,
 				538716BD1BCD7D6200DEE44B /* PLDInstitution.m in Sources */,
 				53994A4C1BD964760083B4CB /* PLDConnectResponse.m in Sources */,
 				53994A461BD9532C0083B4CB /* PLDCategory.m in Sources */,
@@ -175,6 +186,7 @@
 				53994A491BD964450083B4CB /* PLDAuthResponse.m in Sources */,
 				53B925FD1BD061F70059ABA3 /* PLDAuthentication.m in Sources */,
 				536B151F1BB72C8F004A026E /* Plaid.m in Sources */,
+				5369A5321BE0331C006829D5 /* PLDLongTailInstitution.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

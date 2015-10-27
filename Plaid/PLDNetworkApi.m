@@ -110,6 +110,7 @@ static NSString * const kPlaidErrorDomain = @"com.parse";
                                                     userInfo:underlyingUserInfo];
   NSDictionary *userInfo = @{
     NSLocalizedDescriptionKey : responseData[@"message"],
+    NSLocalizedRecoverySuggestionErrorKey : responseData[@"resolve"],
     NSUnderlyingErrorKey : underlyingError
   };
   return [NSError errorWithDomain:kPlaidErrorDomain code:httpResponse.statusCode userInfo:userInfo];
