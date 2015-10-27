@@ -40,9 +40,9 @@ static NSString *const kTestPassword = @"plaid_good";
 }
 
 - (void)testSettingNilAuthValues {
-  XCTAssertThrows([_plaid setClientId:nil secret:nil], @"Should throw error");
-  XCTAssertThrows([_plaid setClientId:@"" secret:nil], @"Should throw error");
-  XCTAssertThrows([_plaid setClientId:nil secret:@""], @"Should throw error");
+  XCTAssertThrows([_plaid setClientId:nil secret:nil]);
+  XCTAssertThrows([_plaid setClientId:@"" secret:nil]);
+  XCTAssertThrows([_plaid setClientId:nil secret:@""]);
 }
 
 - (void)testAddAuthUser {
