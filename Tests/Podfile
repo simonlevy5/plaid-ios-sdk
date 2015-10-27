@@ -4,6 +4,6 @@ workspace '../Plaid'
 target :ios do
   platform :ios, '7.0'
   pod 'OCMock'
-  pod 'plaid-ios', :path => '../'
+  pod 'plaid-ios-sdk', :path => '../'
 end
 
