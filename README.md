@@ -13,7 +13,7 @@ The start using the SDK you can use Cocoapods or download and integrate the SDK 
 
 Add the following line to your Podfile:
 
-    Pod 'Plaid-sdk'
+    Pod 'plaid-ios-sdk'
 
 Run 'pod install' and you should have the latest release.
 
