@@ -1,0 +1,7 @@
+language: objective-c
+cache:
+- bundler
+- cocoapods
+xcode_workspace: Plaid.xcworkspace
+podfile: Tests/Podfile
+xcode_scheme: ios
