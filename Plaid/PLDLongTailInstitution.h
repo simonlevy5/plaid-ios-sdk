@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 
 #import "PLDDefines.h"
+#import "PLDInstitution.h"
 
 /**
  Object representing a serialized version of a long tail login input. This is used to present login fields to a user logging into a long-tail institution.
@@ -32,7 +33,9 @@
 @interface PLDLongTailInstitutionColors : NSObject
 
 @property(nonatomic, readonly) UIColor *primary;
+@property(nonatomic, readonly) UIColor *light;
 @property(nonatomic, readonly) UIColor *darker;
+@property(nonatomic, readonly) UIColor *dark;
 
 @end
 
@@ -41,10 +44,8 @@
  
  @warning Values not returned will be nil.
  */
-@interface PLDLongTailInstitution : NSObject
+@interface PLDLongTailInstitution : PLDInstitution
 
-@property(nonatomic, readonly) NSString *id;
-@property(nonatomic, readonly) NSString *name;
 @property(nonatomic, readonly) NSArray *productsAvailable;  // NSArray<PlaidProduct>
 @property(nonatomic, readonly) NSUInteger nameBreakPosition;
 
@@ -55,8 +56,6 @@
 @property(nonatomic, readonly) PLDLongTailInstitutionLoginInput *usernameInput;
 @property(nonatomic, readonly) PLDLongTailInstitutionLoginInput *passwordInput;
 @property(nonatomic, readonly) NSArray *additionalLoginInputs;
-
-@property(nonatomic, readonly) UIImage *logoImage;
 @property(nonatomic, readonly) PLDLongTailInstitutionColors *colors;
 
 /**

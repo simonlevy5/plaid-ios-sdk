@@ -21,6 +21,7 @@
 @property(nonatomic, readonly) NSString *type;
 @property(nonatomic, readonly) BOOL hasMfa;
 @property(nonatomic, readonly) NSArray *mfaOptions;
+@property(nonatomic, readonly) UIImage *logoImage;
 
 /**
  Initializes a 'PLDInstitution' object with a dictionary that should contain the JSON response from the Plaid API.

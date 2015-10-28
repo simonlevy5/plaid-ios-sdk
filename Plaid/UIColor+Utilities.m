@@ -10,6 +10,26 @@
 
 @implementation UIColor (Utilities)
 
++ (UIColor *)colorWithHex:(NSString*)hex alpha:(CGFloat)alpha {
+  NSString *redHex = [NSString stringWithFormat:@"0x%@", [hex substringWithRange:NSMakeRange(1, 2)]];
+  NSString *greenHex = [NSString stringWithFormat:@"0x%@", [hex substringWithRange:NSMakeRange(3, 2)]];
+  NSString *blueHex = [NSString stringWithFormat:@"0x%@", [hex substringWithRange:NSMakeRange(5, 2)]];
+  
+  unsigned redInt = 0;
+  NSScanner *rScanner = [NSScanner scannerWithString:redHex];
+  [rScanner scanHexInt:&redInt];
+  
+  unsigned greenInt = 0;
+  NSScanner *gScanner = [NSScanner scannerWithString:greenHex];
+  [gScanner scanHexInt:&greenInt];
+  
+  unsigned blueInt = 0;
+  NSScanner *bScanner = [NSScanner scannerWithString:blueHex];
+  [bScanner scanHexInt:&blueInt];
+
+  return [UIColor colorWithRgbaRed:redInt green:greenInt blue:blueInt alpha:alpha];
+}
+
 + (UIColor *)colorWithRgbaRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha {
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }

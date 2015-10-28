@@ -25,7 +25,7 @@
 
 - (NSString *)description {
   return [NSString stringWithFormat:@"%@ - name: %@ type: %@ hasMfa: %d",
-              [super description], _name, _type, _hasMfa];
+              [super description], self.name, self.type, self.hasMfa];
 }
 
 - (UIColor *)backgroundColor {

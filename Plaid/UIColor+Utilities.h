@@ -10,6 +10,7 @@
 
 @interface UIColor (Utilities)
 
++ (UIColor *)colorWithHex:(NSString*)hex alpha:(CGFloat)alpha;
 + (UIColor *)colorWithRgbaRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
 + (UIColor *)colorWithRgbaRed:(int)red green:(int)green blue:(int)blue;
 

@@ -30,12 +30,21 @@
   if (self = [super init]) {
     _primary = [self colorWithString:dictionary[@"primary"]];
     _darker = [self colorWithString:dictionary[@"darker"]];
+    if ([dictionary containsNonNullForKey:@"light"]) {
+      _light = [self colorWithString:dictionary[@"light"]];
+    }
+    if ([dictionary containsNonNullForKey:@"dark"]) {
+      _dark = [self colorWithString:dictionary[@"dark"]];
+    }
   }
   return self;
 }
 
-// Expected format: "rgba(int, int, int, float)"
+// Expected formats: "rgba(int, int, int, float)" or "#AAAAAA"
 - (UIColor *)colorWithString:(NSString *)string {
+  if ([string hasPrefix:@"#"]) {
+    return [UIColor colorWithHex:string alpha:1.0];
+  }
   NSRange unnecessaryRange = [string rangeOfString:@"rgba"];
   NSUInteger start = unnecessaryRange.length;
   // Now (int, int, int, float)
@@ -51,12 +60,25 @@
 
 @end
 
-@implementation PLDLongTailInstitution
+@implementation PLDLongTailInstitution {
+  UIImage *_logo;
+}
+
+- (NSString *)type {
+  return self.id;
+}
+
+- (UIImage *)logoImage {
+  return _logo;
+}
+
+- (UIColor *)backgroundColor {
+  // Returning default grey for now until nicer colors are figured out.
+  return [UIColor colorWithRgbaRed:137 green:143 blue:153];
+}
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-  if (self = [super init]) {
-    _id = dictionary[@"id"];
-    _name = dictionary[@"name"];
+  if (self = [super initWithDictionary:dictionary]) {
     if ([dictionary containsNonNullForKey:@"nameBreak"]) {
       _nameBreakPosition = [dictionary[@"nameBreak"] unsignedIntegerValue];
     }
@@ -82,14 +104,15 @@
       }
     }
     _additionalLoginInputs = additionalInputs;
-    
+
+    _colors = [[PLDLongTailInstitutionColors alloc] initWithDictionary:dictionary[@"colors"]];
     _forgottenPasswordURL = [NSURL URLWithString:dictionary[@"forgottenPassword"]];
     _accountLockedURL = [NSURL URLWithString:dictionary[@"accountLocked"]];
     _accountSetupURL = [NSURL URLWithString:dictionary[@"accountSetup"]];
 
     if ([dictionary containsNonNullForKey:@"logo"]) {
       NSData *data = [[NSData alloc] initWithBase64EncodedString:dictionary[@"logo"] options:0];
-      _logoImage = [UIImage imageWithData:data];
+      _logo = [UIImage imageWithData:data];
     }
   }
   return self;
