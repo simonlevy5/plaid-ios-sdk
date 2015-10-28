@@ -48,6 +48,14 @@
 - (NSDictionary *)randomInstitutionObject;
 
 /**
+ An example dictionary containing a long tail institution object from the 'Plaid' API filled in with random data for testing.
+ 
+ @returns NSDictionary containing the random JSON payload.
+ @see https://plaid.com/docs/#institution-search
+ */
+- (NSDictionary *)randomLongTailInstitutionObject;
+
+/**
  Set the expected response to be returned from the network as a result of calling any 'Plaid' API method. The API normally returns a JSON document and is then serialized into an NSDictionary *.
  
  This is to test expected responses without hitting the network.

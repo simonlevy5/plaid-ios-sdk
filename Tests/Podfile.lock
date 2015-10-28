@@ -1,17 +1,17 @@
 PODS:
   - OCMock (3.2)
-  - plaid-ios (0.1.0)
+  - plaid-ios-sdk (0.1.0)
 
 DEPENDENCIES:
   - OCMock
-  - plaid-ios (from `../`)
+  - plaid-ios-sdk (from `../`)
 
 EXTERNAL SOURCES:
-  plaid-ios:
+  plaid-ios-sdk:
     :path: "../"
 
 SPEC CHECKSUMS:
   OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
-  plaid-ios: 5084cd37f2c362189fd51b37eebb4282be3ec34a
+  plaid-ios-sdk: d3b6ed7f4cc5b79ca96a161de5d0bfd89af15310
 
 COCOAPODS: 0.39.0

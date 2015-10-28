@@ -285,6 +285,64 @@ static NSString *const kTestPassword = @"plaid_good";
   [self waitForTestExpectations];
 }
 
+- (void)testGetLongTailInstitutionsWithQuery {
+  [_plaid setMockedResponse:@[
+    [_plaid randomLongTailInstitutionObject],
+    [_plaid randomLongTailInstitutionObject]
+  ]];
+
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid getLongTailInstitutionsWithQuery:@"query"
+                                   product:0
+                                completion:^(id response, NSError *error) {
+    strongify(self);
+    XCTAssertNotNil(response);
+    XCTAssertEqual([[response firstObject] class], [PLDLongTailInstitution class]);
+    XCTAssertGreaterThan([response count], 0);
+    [expectation fulfill];
+  }];
+  [self waitForTestExpectations];
+}
+
+- (void)testGetLongTailInstitutionsWithQueryAndFilter {
+  [_plaid setMockedResponse:@[
+    [_plaid randomLongTailInstitutionObject],
+    [_plaid randomLongTailInstitutionObject]
+  ]];
+
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid getLongTailInstitutionsWithQuery:@"query"
+                                   product:PlaidProductConnect
+                                completion:^(id response, NSError *error) {
+    strongify(self);
+    XCTAssertNotNil(response);
+    XCTAssertEqual([[response firstObject] class], [PLDLongTailInstitution class]);
+    XCTAssertGreaterThan([response count], 0);
+    [expectation fulfill];
+  }];
+  [self waitForTestExpectations];
+}
+
+- (void)testGetLongTailInstitutionsById {
+  [_plaid setMockedResponse:@[
+    [_plaid randomLongTailInstitutionObject],
+    [_plaid randomLongTailInstitutionObject]
+  ]];
+  
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid getLongTailInstitutionsById:@"id" completion:^(id response, NSError *error) {
+    strongify(self);
+    XCTAssertNotNil(response);
+    XCTAssertEqual([[response firstObject] class], [PLDLongTailInstitution class]);
+    XCTAssertGreaterThan([response count], 0);
+    [expectation fulfill];
+  }];
+  [self waitForTestExpectations];
+}
+
 - (void)testExchangePublicToken {
   [_plaid setMockedResponse:@{ @"access_token" : @"test_access_token" }];
   
