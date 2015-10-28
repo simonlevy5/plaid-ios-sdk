@@ -231,7 +231,9 @@ static Plaid *sInstance = nil;
 - (void)getLongTailInstitutionsWithQuery:(NSString *)query
                                  product:(PlaidProduct)product
                               completion:(PlaidCompletion)completion {
-  NSString *path = [NSString stringWithFormat:@"institutions/search?q=%@", query];
+  NSCharacterSet *alphaCharacters = [NSCharacterSet alphanumericCharacterSet];
+  NSString *urlEncodedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:alphaCharacters];
+  NSString *path = [NSString stringWithFormat:@"institutions/search?q=%@", urlEncodedQuery];
   if (product) {
     path = [path stringByAppendingString:[NSString stringWithFormat:@"&p=%@", NSStringFromPlaidProduct(product)]];
   }
