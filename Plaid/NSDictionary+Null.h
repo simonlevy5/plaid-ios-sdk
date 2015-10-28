@@ -1,5 +1,5 @@
 //
-//  NSObject+Null.h
+//  NSDictionary+Null.h
 //  Plaid
 //
 //  Created by Simon Levy on 10/28/15.
@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (Null)
+@interface NSDictionary (Null)
 
-- (BOOL)isNull;
+- (BOOL)containsNonNullForKey:(id)key;
 
 @end
