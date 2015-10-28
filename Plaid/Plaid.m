@@ -231,14 +231,13 @@ static Plaid *sInstance = nil;
 - (void)getLongTailInstitutionsWithQuery:(NSString *)query
                                  product:(PlaidProduct)product
                               completion:(PlaidCompletion)completion {
-  NSMutableDictionary *params = [NSMutableDictionary dictionary];
-  params[@"q"] = query;
+  NSString *path = [NSString stringWithFormat:@"institutions/search?q=%@", query];
   if (product) {
-    params[@"p"] = NSStringFromPlaidProduct(product);
+    path = [path stringByAppendingString:[NSString stringWithFormat:@"&p=%@", NSStringFromPlaidProduct(product)]];
   }
-  [_networkApi executeRequestWithPath:@"institutions/search"
+  [_networkApi executeRequestWithPath:path
                                method:@"GET"
-                           parameters:params
+                           parameters:nil
                            completion:^(id response, NSError *error) {
                              if (error) {
                                completion(nil, error);
@@ -255,12 +254,10 @@ static Plaid *sInstance = nil;
 
 - (void)getLongTailInstitutionsById:(NSString *)institutionId
                          completion:(PlaidCompletion)completion {
-  NSDictionary *params = @{
-    @"id" : institutionId
-  };
-  [_networkApi executeRequestWithPath:@"institutions/search"
+  NSString *path = [NSString stringWithFormat:@"institutions/search?id=%@", institutionId];
+  [_networkApi executeRequestWithPath:path
                                method:@"GET"
-                           parameters:params
+                           parameters:nil
                            completion:^(id response, NSError *error) {
                              if (error) {
                                completion(nil, error);

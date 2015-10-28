@@ -8,6 +8,7 @@
 
 #import "PLDLongTailInstitution.h"
 
+#import "NSObject+Null.h"
 #import "UIColor+Utilities.h"
 
 @implementation PLDLongTailInstitutionLoginInput
@@ -56,7 +57,9 @@
   if (self = [super init]) {
     _id = dictionary[@"id"];
     _name = dictionary[@"name"];
-    _nameBreakPosition = [dictionary[@"nameBreak"] unsignedIntegerValue];
+    if (![dictionary[@"nameBreak"] isNull]) {
+      _nameBreakPosition = [dictionary[@"nameBreak"] unsignedIntegerValue];
+    }
     NSMutableArray *products = [NSMutableArray array];
     NSDictionary *productsDict = dictionary[@"products"];
     for (NSString *product in [productsDict allKeys]) {
@@ -83,9 +86,11 @@
     _forgottenPasswordURL = [NSURL URLWithString:dictionary[@"forgottenPassword"]];
     _accountLockedURL = [NSURL URLWithString:dictionary[@"accountLocked"]];
     _accountSetupURL = [NSURL URLWithString:dictionary[@"accountSetup"]];
-    
-    NSData *data = [[NSData alloc] initWithBase64EncodedString:dictionary[@"logo"] options:0];
-    _logoImage = [UIImage imageWithData:data];
+
+    if (![dictionary[@"logo"] isNull]) {
+      NSData *data = [[NSData alloc] initWithBase64EncodedString:dictionary[@"logo"] options:0];
+      _logoImage = [UIImage imageWithData:data];
+    }
   }
   return self;
 }
