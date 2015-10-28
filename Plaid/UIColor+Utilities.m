@@ -10,7 +10,7 @@
 
 @implementation UIColor (Utilities)
 
-+ (UIColor *)colorWithRgbaRed:(int)red green:(int)green blue:(int)blue alpha:(float)alpha {
++ (UIColor *)colorWithRgbaRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha {
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
