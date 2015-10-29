@@ -27,4 +27,4 @@ Extensive documentation contained in Plaid.h header file.
 
 **License**
 
-MIT
+MIT [See included](https://github.com/vouch/plaid-ios-sdk/blob/master/LICENSE)
