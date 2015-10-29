@@ -25,7 +25,14 @@ Run 'pod install' and you should have the latest release.
     
 Extensive documentation contained in Plaid.h header file.
 
+**Swift**
+
+To use this SDK with a Swift project you must do the following:
+
+1. Create a bridging header file. [See Apple docs on this for further reading](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html)
+2. Add Plaid-Swift.h to the bridging header file.
+3. Start using Plaid in your Swift code.
+
 **License**
 
-MIT 
-[See included](https://github.com/vouch/plaid-ios-sdk/blob/master/LICENSE)
+plaid-ios-sdk is released under the MIT license. See [LICENSE](https://github.com/vouch/plaid-ios-sdk/blob/master/LICENSE) for details.
