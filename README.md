@@ -1,5 +1,5 @@
 [![Build Status](https://magnum.travis-ci.com/vouch/plaid-ios-sdk.svg?token=d9FSzqpZpyWCYnF5YjqQ&branch=master)](https://magnum.travis-ci.com/vouch/plaid-ios-sdk)
-[![Platforms](https://img.shields.io/badge/platform-ios-lightgrey.svg)]
+[![Platforms](https://img.shields.io/badge/platform-ios-lightgrey.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/vouch/plaid-ios-sdk/blob/master/LICENSE)
 
 ## plaid-ios-sdk
