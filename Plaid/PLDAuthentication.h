@@ -3,7 +3,6 @@
 //  Plaid
 //
 //  Created by Simon Levy on 10/15/15.
-//  Copyright © 2015 Vouch Financial, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
