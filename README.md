@@ -25,6 +25,6 @@ Run 'pod install' and you should have the latest release.
     
 Extensive documentation contained in Plaid.h header file.
 
-** License
+**License**
 
 MIT
