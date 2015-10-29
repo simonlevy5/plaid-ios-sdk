@@ -7,9 +7,7 @@ A library to develop against the Plaid API from an iOS app. For more information
 
 ## Getting Started
 
-The start using the SDK you can use Cocoapods or download and integrate the SDK directly.
-
-**Cocoapods**
+**Installation**
 
 Add the following line to your Podfile:
 
@@ -17,8 +15,16 @@ Add the following line to your Podfile:
 
 Run 'pod install' and you should have the latest release.
 
-**Downloading and integrating**
 
-WIP
+**Usage**
 
-Instructions to develop against Plaid Link: https://github.com/vouch/plaid-ios-link 
+    #import "Plaid.h"
+
+    Plaid *plaid = [Plaid sharedInstance];
+    [plaid setClientId:@"your_client_id" secret:@"your_secret"];
+    
+Extensive documentation contained in Plaid.h header file.
+
+** License
+
+MIT
