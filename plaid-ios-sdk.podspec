@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Plaid/**/*'
-  s.public_header_files = 'Pod/Plaid/*.h'
+  s.public_header_files = 'Plaid/*.h'
 end
