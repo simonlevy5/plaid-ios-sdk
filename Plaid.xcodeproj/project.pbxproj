@@ -42,6 +42,7 @@
 		5369A5371BE03B83006829D5 /* UIColor+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
 		5369A53F1BE15DA7006829D5 /* NSDictionary+Null.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Null.h"; sourceTree = "<group>"; };
 		5369A5401BE15DA7006829D5 /* NSDictionary+Null.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Null.m"; sourceTree = "<group>"; };
+		5369A5431BE2908F006829D5 /* Plaid-Swift.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; path = "Plaid-Swift.h"; sourceTree = "<group>"; };
 		536B15191BB72C8F004A026E /* libPlaid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPlaid.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		536B151C1BB72C8F004A026E /* Plaid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plaid.h; sourceTree = "<group>"; };
 		536B151E1BB72C8F004A026E /* Plaid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plaid.m; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		536B151B1BB72C8F004A026E /* Plaid */ = {
 			isa = PBXGroup;
 			children = (
+				5369A5431BE2908F006829D5 /* Plaid-Swift.h */,
 				536B151C1BB72C8F004A026E /* Plaid.h */,
 				536B151E1BB72C8F004A026E /* Plaid.m */,
 				53994A3E1BD949A50083B4CB /* PLDAccount.h */,
