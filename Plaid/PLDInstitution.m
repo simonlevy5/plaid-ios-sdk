@@ -28,9 +28,11 @@
 }
 
 - (UIColor *)backgroundColor {
+  // We use hardcoded values because some of the colors returned by the API are off.
+  // TODO: Use API's color as fallback.
   NSDictionary *colors = [PLDInstitution backgroundColors];
   UIColor *bankColor = [colors objectForKey:self.type];
-  return bankColor != nil ? bankColor : [UIColor redColor];
+  return bankColor != nil ? bankColor : [UIColor darkGrayColor];
 }
 
 + (NSDictionary *)backgroundColors {

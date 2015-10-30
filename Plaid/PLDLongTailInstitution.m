@@ -72,8 +72,7 @@
 }
 
 - (UIColor *)backgroundColor {
-  // Returning default grey for now until nicer colors are figured out.
-  return [UIColor colorWithRgbaRed:137 green:143 blue:153];
+  return _colors.darker;
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
