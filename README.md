@@ -1,4 +1,6 @@
 [![Build Status](https://magnum.travis-ci.com/vouch/plaid-ios-sdk.svg?token=d9FSzqpZpyWCYnF5YjqQ&branch=master)](https://magnum.travis-ci.com/vouch/plaid-ios-sdk)
+[![Platforms](https://img.shields.io/badge/platform-ios-lightgrey.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/vouch/plaid-ios-sdk/blob/master/LICENSE)
 
 ## plaid-ios-sdk
 Plaid iOS framework
@@ -23,7 +25,7 @@ Run 'pod install' and you should have the latest release.
     Plaid *plaid = [Plaid sharedInstance];
     [plaid setClientId:@"your_client_id" secret:@"your_secret"];
     
-Extensive documentation contained in Plaid.h header file.
+Extensive documentation contained in [Plaid.h header file](https://github.com/vouch/plaid-ios-sdk/blob/master/Plaid/Plaid.h).
 
 **Swift**
 

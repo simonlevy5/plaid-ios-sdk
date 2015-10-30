@@ -12,6 +12,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   OCMock: 28def049ef47f996b515a8eeea958be7ccab2dbb
-  plaid-ios-sdk: d3b6ed7f4cc5b79ca96a161de5d0bfd89af15310
+  plaid-ios-sdk: c0e8803a30bb4e3af0e4a6e40c079285516aba6e
 
 COCOAPODS: 0.39.0
