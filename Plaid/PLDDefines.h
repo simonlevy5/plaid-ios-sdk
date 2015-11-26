@@ -7,9 +7,7 @@
 
 typedef NS_ENUM(NSUInteger, PlaidEnvironment) {
   PlaidEnvironmentTartan,
-  PlaidEnvironmentTartanLink,
   PlaidEnvironmentProduction,
-  PlaiDenvironmentProductionLink
 };
 
 typedef NS_ENUM(NSUInteger, PlaidProduct) {
@@ -23,10 +21,8 @@ typedef NS_ENUM(NSUInteger, PlaidProduct) {
 static NSString * NSStringFromPlaidEnviroment(PlaidEnvironment environment) {
   switch (environment) {
     case PlaidEnvironmentTartan:
-    case PlaidEnvironmentTartanLink:
       return @"tartan";
     case PlaidEnvironmentProduction:
-    case PlaiDenvironmentProductionLink:
       return @"production";
     default:
       break;

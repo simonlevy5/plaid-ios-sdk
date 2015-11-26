@@ -11,6 +11,18 @@
 
 static Plaid *sInstance = nil;
 
+static NSString * LinkHostForEnvironment(PlaidEnvironment environment) {
+  switch (environment) {
+    case PlaidEnvironmentTartan:
+      return kPlaidLinkHostTartan;
+    case PlaidEnvironmentProduction:
+      return kPlaidLinkHostProduction;
+    default:
+      break;
+  }
+  return nil;
+}
+
 @implementation Plaid {
   NSString *_clientId;
   PlaidEnvironment _environment;
@@ -349,7 +361,8 @@ static Plaid *sInstance = nil;
     @"public_key": _publicKey,
     @"webhook": webhook
   };
-  [_networkApi executeRequestWithPath:@"authenticate"
+  [_networkApi executeRequestWithHost:LinkHostForEnvironment(_environment)
+                                 path:@"authenticate"
                                method:@"POST"
                            parameters:parameters
                            completion:^(id response, NSError *error) {
@@ -383,7 +396,8 @@ static Plaid *sInstance = nil;
     @"public_token": publicToken,
     @"webhook": webhook
   };
-  [_networkApi executeRequestWithPath:@"authenticate/mfa"
+  [_networkApi executeRequestWithHost:LinkHostForEnvironment(_environment)
+                                 path:@"authenticate/mfa"
                                method:@"POST"
                            parameters:parameters
                            completion:^(id response, NSError *error) {

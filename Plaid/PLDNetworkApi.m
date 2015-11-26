@@ -10,8 +10,8 @@
 static NSString * const kPlaidTartanHost = @"https://tartan.plaid.com/";
 static NSString * const kPlaidProductionHost = @"https://api.plaid.com/";
 
-static NSString * const kPlaidTartanLinkHost = @"https://link-tartan.plaid.com/";
-static NSString * const kPlaidProductionLinkHost = @"https://link.plaid.com/";
+NSString * kPlaidLinkHostTartan = @"https://link-tartan.plaid.com/";
+NSString * kPlaidLinkHostProduction = @"https://link.plaid.com/";
 
 static NSString * const kPlaidErrorDomain = @"com.parse";
 
@@ -25,14 +25,8 @@ static NSString * const kPlaidErrorDomain = @"com.parse";
       case PlaidEnvironmentTartan:
         _host = kPlaidTartanHost;
         break;
-      case PlaidEnvironmentTartanLink:
-        _host = kPlaidTartanLinkHost;
-        break;
       case PlaidEnvironmentProduction:
         _host = kPlaidProductionHost;
-        break;
-      case PlaiDenvironmentProductionLink:
-        _host = kPlaidProductionLinkHost;
         break;
       default:
         NSAssert(NO, @"Plaid environment doesn't exist.");
@@ -46,7 +40,19 @@ static NSString * const kPlaidErrorDomain = @"com.parse";
                         method:(NSString *)method
                     parameters:(NSDictionary *)parameters
                     completion:(PLDNetworkCompletion)completion {
-  NSString *urlString = [NSString stringWithFormat:@"%@%@", _host, path];
+  [self executeRequestWithHost:_host
+                          path:path
+                        method:method
+                    parameters:parameters
+                    completion:completion];
+}
+
+- (void)executeRequestWithHost:(NSString *)host
+                          path:(NSString *)path
+                        method:(NSString *)method
+                    parameters:(NSDictionary *)parameters
+                    completion:(PLDNetworkCompletion)completion {
+  NSString *urlString = [NSString stringWithFormat:@"%@%@", host, path];
   NSURL *url = [NSURL URLWithString:urlString];
   NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
   [request addValue:@"application/json;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
