@@ -15,6 +15,7 @@ static Plaid *sInstance = nil;
   NSString *_clientId;
   PlaidEnvironment _environment;
   NSString *_secret;
+  NSString *_publicKey;
 
   PLDNetworkApi *_networkApi;
 }
@@ -48,6 +49,12 @@ static Plaid *sInstance = nil;
 
   _clientId = clientId;
   _secret = secret;
+}
+
+- (void)setPublicKey:(NSString *)publicKey {
+  NSAssert([publicKey length] > 0, @"Must set public token to a non-empty value");
+  
+  _publicKey = publicKey;
 }
 
 #pragma mark - Auth Product
@@ -318,6 +325,78 @@ static Plaid *sInstance = nil;
                                                                    response:response];
                              completion(authentication, response, nil);
                            }];
+}
+
+#pragma mark - Plaid Link endpoints
+
+- (void)addLinkUserForProduct:(PlaidProduct)product
+                     username:(NSString *)username
+                     password:(NSString *)password
+                         type:(NSString *)type
+                      options:(NSDictionary *)options
+                   completion:(PlaidMfaCompletion)completion {
+  NSString *webhook = @"";
+  if (options[@"webhook"]) {
+    webhook = options[@"webhook"];
+  }
+  NSDictionary *parameters = @{
+    @"env" : NSStringFromPlaidEnviroment(_environment),
+    @"include_accounts": @(NO),
+    @"institution_type": type,
+    @"username": username,
+    @"password": password,
+    @"product": NSStringFromPlaidProduct(product),
+    @"public_key": _publicKey,
+    @"webhook": webhook
+  };
+  [_networkApi executeRequestWithPath:@"authenticate"
+                               method:@"POST"
+                           parameters:parameters
+                           completion:^(id response, NSError *error) {
+    if (error) {
+      completion(nil, response, error);
+      return;
+    }
+   
+    PLDLinkAuthentication *authentication =
+        [[PLDLinkAuthentication alloc] initWithProduct:product
+                                              response:response];
+    completion(authentication, response, error);
+  }];
+}
+
+- (void)stepLinkUserForProduct:(PlaidProduct)product
+                   publicToken:(NSString *)publicToken
+                   mfaResponse:(id)mfaResponse
+                       options:(NSDictionary *)options
+                    completion:(PlaidMfaCompletion)completion {
+  NSString *webhook = @"";
+  if (options[@"webhook"]) {
+    webhook = options[@"webhook"];
+  }
+  NSDictionary *parameters = @{
+    @"env" : NSStringFromPlaidEnviroment(_environment),
+    @"include_accounts": @(NO),
+    @"mfa": mfaResponse,
+    @"product": NSStringFromPlaidProduct(product),
+    @"public_key": _publicKey,
+    @"public_token": publicToken,
+    @"webhook": webhook
+  };
+  [_networkApi executeRequestWithPath:@"authenticate/mfa"
+                               method:@"POST"
+                           parameters:parameters
+                           completion:^(id response, NSError *error) {
+    if (error) {
+     completion(nil, response, error);
+     return;
+    }
+
+    PLDLinkAuthentication *authentication =
+        [[PLDLinkAuthentication alloc] initWithProduct:product
+                                              response:response];
+    completion(authentication, response, error);
+  }];
 }
 
 #pragma mark - Private

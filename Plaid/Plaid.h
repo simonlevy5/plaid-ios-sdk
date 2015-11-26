@@ -1,4 +1,3 @@
-//
 //  Plaid.h
 //  Plaid
 //
@@ -14,6 +13,7 @@
 #import "PLDCategory.h"
 #import "PLDDefines.h"
 #import "PLDInstitution.h"
+#import "PLDLinkAuthentication.h"
 #import "PLDLongTailInstitution.h"
 #import "PLDTransaction.h"
 
@@ -74,12 +74,19 @@ typedef void (^PlaidMfaCompletion)(PLDAuthentication *authentication, id respons
 @property(nonatomic, readonly) PLDNetworkApi *networkApi;
 
 /*
- Configure this instance of 'Plaid' with a clientId and secret, whic is obtained via https://dashboard.plaid.com/signup/
+ Configure this instance of 'Plaid' with a clientId and secret, which is obtained via https://dashboard.plaid.com/signup/
  
  @param clientId The client id of the account using this instance.
  @param secret The secret of the account using this instance.
  */
 - (void)setClientId:(NSString *)clientId secret:(NSString *)secret;
+
+/**
+ Configure this instance of 'Plaid' with a public token used to complete Plaid Link. This can be obtained via https://dashboard.plaid.com/signup/
+ 
+ @param publicKey The public token
+ */
+- (void)setPublicKey:(NSString *)publicKey;
 
 ///---------------------
 /// @name Auth product endpoints
@@ -432,5 +439,22 @@ typedef void (^PlaidMfaCompletion)(PLDAuthentication *authentication, id respons
 - (void)upgradeUserWithAccessToken:(NSString *)accessToken
                          upgradeTo:(PlaidProduct)upgradeTo
                         completion:(PlaidMfaCompletion)completion;
+
+///---------------------
+/// @name Plaid Link endpoints. This allows login via Plaid Link.
+///---------------------
+
+- (void)addLinkUserForProduct:(PlaidProduct)product
+                     username:(NSString *)username
+                     password:(NSString *)password
+                         type:(NSString *)type
+                      options:(NSDictionary *)options
+                   completion:(PlaidMfaCompletion)completion;
+
+- (void)stepLinkUserForProduct:(PlaidProduct)product
+                   publicToken:(NSString *)publicToken
+                   mfaResponse:(id)mfaResponse
+                       options:(NSDictionary *)options
+                    completion:(PlaidMfaCompletion)completion;
 
 @end

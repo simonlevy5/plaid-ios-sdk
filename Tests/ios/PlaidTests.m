@@ -33,6 +33,7 @@ static NSString *const kTestPassword = @"plaid_good";
 
   _plaid = [Plaid sharedInstance];
   [_plaid setClientId:@"test_id" secret:@"test_secret"];
+  [_plaid setPublicKey:@"test_key"];
 }
 
 - (void)tearDown {
@@ -43,6 +44,214 @@ static NSString *const kTestPassword = @"plaid_good";
   XCTAssertThrows([_plaid setClientId:nil secret:nil]);
   XCTAssertThrows([_plaid setClientId:@"" secret:nil]);
   XCTAssertThrows([_plaid setClientId:nil secret:@""]);
+}
+
+- (void)testLinkAddUserSuccess {
+  [_plaid setMockedResponse:[_plaid linkAuthResponseWithType:kTestType]];
+  
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid addLinkUserForProduct:PlaidProductAuth
+                       username:kTestUsername
+                       password:kTestPassword
+                           type:kTestType
+                        options:nil
+                     completion:^(PLDAuthentication *authentication,
+                                  id response,
+                                  NSError *error) {
+                       strongify(self);
+                       XCTAssertNil(error);
+                       XCTAssertEqual([authentication class], [PLDLinkAuthentication class]);
+                       XCTAssertTrue([[authentication accessToken] isEqualToString:@"test,wells,connected"]);
+                       [expectation fulfill];
+  }];
+  [self waitForTestExpectations];
+}
+
+- (void)testLinkAddUserMFAChooseDevice {
+  [_plaid setMockedResponse:[_plaid linkAuthChooseDeviceWithType:kTestType]];
+  
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid addLinkUserForProduct:PlaidProductAuth
+                       username:kTestUsername
+                       password:kTestPassword
+                           type:kTestType
+                        options:nil
+                     completion:^(PLDAuthentication *authentication,
+                                  id response,
+                                  NSError *error) {
+                       strongify(self);
+                       XCTAssertNil(error);
+                       [self verifyLinkAuthentication:authentication
+                                           withStatus:@"choose_device"
+                                                 type:kPLDMFATypeList
+                                                class:[NSArray class]];
+                       [expectation fulfill];
+  }];
+  [self waitForTestExpectations];
+}
+
+- (void)testLinkAddUserMFARequiresCode {
+  [_plaid setMockedResponse:[_plaid linkAuthRequiresCodeResponseWithType:kTestType]];
+
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid addLinkUserForProduct:PlaidProductAuth
+                       username:kTestUsername
+                       password:kTestPassword
+                           type:kTestType
+                        options:nil
+                     completion:^(PLDAuthentication *authentication,
+                                  id response,
+                                  NSError *error) {
+                       strongify(self);
+                       XCTAssertNil(error);
+                       [self verifyLinkAuthentication:authentication
+                                           withStatus:@"requires_code"
+                                                 type:kPLDMFATypeCode
+                                                class:[NSString class]];
+                       [expectation fulfill];
+  }];
+  [self waitForTestExpectations];
+}
+
+- (void)testLinkAddUserMFAQuestions {
+  [_plaid setMockedResponse:[_plaid linkAuthRequiresQuestionsResponseWithType:kTestType]];
+  
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid addLinkUserForProduct:PlaidProductAuth
+                       username:kTestUsername
+                       password:kTestPassword
+                           type:kTestType
+                        options:nil
+                     completion:^(PLDAuthentication *authentication,
+                                  id response,
+                                  NSError *error) {
+                       strongify(self);
+                       XCTAssertNil(error);
+                       [self verifyLinkAuthentication:authentication
+                                           withStatus:@"requires_questions"
+                                                 type:kPLDMFATypeQuestion
+                                                class:[NSString class]];
+                       [expectation fulfill];
+  }];
+  [self waitForTestExpectations];
+}
+
+- (void)testLinkAddUserMFASelections {
+  [_plaid setMockedResponse:[_plaid linkAuthRequiresSelectionsResponseWithType:kTestType]];
+  
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid addLinkUserForProduct:PlaidProductAuth
+                       username:kTestUsername
+                       password:kTestPassword
+                           type:kTestType
+                        options:nil
+                     completion:^(PLDAuthentication *authentication,
+                                  id response,
+                                  NSError *error) {
+                       strongify(self);
+                       XCTAssertNil(error);
+                       [self verifyLinkAuthentication:authentication
+                                           withStatus:@"requires_selections"
+                                                 type:kPLDMFATypeSelection
+                                                class:[NSArray class]];
+                       [expectation fulfill];
+  }];
+  [self waitForTestExpectations];
+}
+
+- (void)testLinkStepUserSuccess {
+  [_plaid setMockedResponse:[_plaid linkAuthResponseWithType:kTestType]];
+  
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid stepLinkUserForProduct:PlaidProductAuth
+                     publicToken:@"test,wells,requires_code"
+                     mfaResponse:@"1234"
+                         options:nil
+                      completion:^(PLDAuthentication *authentication,
+                                   id response,
+                                   NSError *error) {
+                       strongify(self);
+                       XCTAssertNil(error);
+                       XCTAssertEqual([authentication class], [PLDLinkAuthentication class]);
+                       XCTAssertTrue([[authentication accessToken] isEqualToString:@"test,wells,connected"]);
+                       [expectation fulfill];
+                     }];
+  [self waitForTestExpectations];
+}
+
+- (void)testLinkStepUserRequiresCode {
+  [_plaid setMockedResponse:[_plaid linkAuthRequiresCodeResponseWithType:kTestType]];
+  
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid stepLinkUserForProduct:PlaidProductAuth
+                     publicToken:@"test,wells,choose_device"
+                     mfaResponse:@{ @"type": @"email" }
+                         options:nil
+                      completion:^(PLDAuthentication *authentication,
+                                   id response,
+                                   NSError *error) {
+                       strongify(self);
+                       XCTAssertNil(error);
+                       [self verifyLinkAuthentication:authentication
+                                           withStatus:@"requires_code"
+                                                 type:kPLDMFATypeCode
+                                                class:[NSString class]];
+                       [expectation fulfill];
+                     }];
+  [self waitForTestExpectations];
+}
+
+- (void)testLinkStepUserRequiresQuestions {
+  [_plaid setMockedResponse:[_plaid linkAuthRequiresQuestionsResponseWithType:kTestType]];
+  
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid stepLinkUserForProduct:PlaidProductAuth
+                     publicToken:@"test,wells,requires_code"
+                     mfaResponse:@{ @"type": @"email" }
+                         options:nil
+                      completion:^(PLDAuthentication *authentication,
+                                   id response,
+                                   NSError *error) {
+                       strongify(self);
+                       XCTAssertNil(error);
+                       [self verifyLinkAuthentication:authentication
+                                           withStatus:@"requires_questions"
+                                                 type:kPLDMFATypeQuestion
+                                                class:[NSString class]];
+                       [expectation fulfill];
+                     }];
+  [self waitForTestExpectations];
+}
+
+- (void)testLinkStepUserRequiresSelections {
+  [_plaid setMockedResponse:[_plaid linkAuthRequiresSelectionsResponseWithType:kTestType]];
+  
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid stepLinkUserForProduct:PlaidProductAuth
+                     publicToken:@"test,wells,requires_code"
+                     mfaResponse:@{ @"type": @"email" }
+                         options:nil
+                      completion:^(PLDAuthentication *authentication,
+                                   id response,
+                                   NSError *error) {
+                       strongify(self);
+                       XCTAssertNil(error);
+                       [self verifyLinkAuthentication:authentication
+                                           withStatus:@"requires_selections"
+                                                 type:kPLDMFATypeSelection
+                                                class:[NSArray class]];
+                       [expectation fulfill];
+                     }];
+  [self waitForTestExpectations];
 }
 
 - (void)testAddAuthUser {
@@ -386,6 +595,19 @@ static NSString *const kTestPassword = @"plaid_good";
                             [expectation fulfill];
                           }];
   [self waitForTestExpectations];
+}
+
+#pragma mark - Utilities
+
+- (void)verifyLinkAuthentication:(PLDAuthentication *)authentication
+                      withStatus:(NSString *)status
+                            type:(PLDMFAType)type
+                           class:(Class)class {
+  NSString *token = [NSString stringWithFormat:@"test,wells,%@", status];
+  XCTAssertEqual([authentication class], [PLDLinkAuthentication class]);
+  XCTAssertTrue([[authentication accessToken] isEqualToString:token]);
+  XCTAssertEqual([[authentication mfa] type], type);
+  XCTAssertTrue([[[authentication mfa] data] isKindOfClass:class]);
 }
 
 @end

@@ -14,6 +14,47 @@
 
 @implementation Plaid (Mocks)
 
+- (NSDictionary *)linkAuthResponseWithType:(NSString *)type {
+  return [self linkResponseWithType:type status:@"connected" mfa:nil];
+}
+
+- (NSDictionary *)linkAuthChooseDeviceWithType:(NSString *)type {
+  NSArray *mfa = @[
+    @{
+      @"type": @"email",
+      @"mask": @"t..t@plaid.com"
+    },
+    @{
+      @"type": @"phone",
+      @"mask": @"xxx-xxx-5309"
+    }
+  ];
+  return [self linkResponseWithType:type status:@"choose_device" mfa:mfa];
+}
+
+- (NSDictionary *)linkAuthRequiresCodeResponseWithType:(NSString *)type {
+  NSString *mfa = @"Code sent to t..t@plaid.com";
+  return [self linkResponseWithType:type status:@"requires_code" mfa:mfa];
+}
+
+- (NSDictionary *)linkAuthRequiresQuestionsResponseWithType:(NSString *)type {
+  NSString *mfa = @"What type of bear is best?";
+  return [self linkResponseWithType:type status:@"requires_questions" mfa:mfa];
+}
+
+- (NSDictionary *)linkAuthRequiresSelectionsResponseWithType:(NSString *)type {
+  NSArray *mfa = @[
+    @{
+      @"question": @"What type of bear is best?",
+      @"answers": @[
+        @"false",
+        @"black bear"
+      ]
+    },
+  ];
+  return [self linkResponseWithType:type status:@"requires_selections" mfa:mfa];
+}
+
 - (NSDictionary *)exampleAuthResponse {
   return @{
     @"access_token" : @"test_wells",
@@ -110,6 +151,25 @@
 }
 
 #pragma mark - Private
+
+- (NSDictionary *)linkResponseWithType:(NSString *)type
+                                status:(NSString *)status
+                                   mfa:(id)mfa {
+  if (!mfa) {
+    mfa = @"null";
+  }
+  return @{
+    @"status" : status,
+    @"public_token" : [self publicTokenWithType:type status:status],
+    @"institution_data" : @{},
+    @"mfa" : mfa,
+    @"request_id" : [NSString stringWithFormat:@"%d", rand()]
+  };
+}
+
+- (NSString *)publicTokenWithType:(NSString *)type status:(NSString *)status {
+  return [NSString stringWithFormat:@"test,%@,%@", type, status];
+}
 
 - (NSDictionary *)randomAccountObject {
   return @{

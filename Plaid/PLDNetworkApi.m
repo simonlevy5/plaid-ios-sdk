@@ -10,6 +10,9 @@
 static NSString * const kPlaidTartanHost = @"https://tartan.plaid.com/";
 static NSString * const kPlaidProductionHost = @"https://api.plaid.com/";
 
+static NSString * const kPlaidTartanLinkHost = @"https://link-tartan.plaid.com/";
+static NSString * const kPlaidProductionLinkHost = @"https://link.plaid.com/";
+
 static NSString * const kPlaidErrorDomain = @"com.parse";
 
 @implementation PLDNetworkApi {
@@ -22,8 +25,14 @@ static NSString * const kPlaidErrorDomain = @"com.parse";
       case PlaidEnvironmentTartan:
         _host = kPlaidTartanHost;
         break;
+      case PlaidEnvironmentTartanLink:
+        _host = kPlaidTartanLinkHost;
+        break;
       case PlaidEnvironmentProduction:
         _host = kPlaidProductionHost;
+        break;
+      case PlaiDenvironmentProductionLink:
+        _host = kPlaidProductionLinkHost;
         break;
       default:
         NSAssert(NO, @"Plaid environment doesn't exist.");
