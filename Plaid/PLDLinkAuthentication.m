@@ -11,7 +11,7 @@
 @interface PLDLinkMFAAuthenticationChoice ()
 
 @property(nonatomic) NSString *displayText;
-@property(nonatomic) NSString *choice;
+@property(nonatomic) id choice;
 
 @end
 
