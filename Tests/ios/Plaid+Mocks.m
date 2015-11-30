@@ -144,10 +144,10 @@
   id mockedNetwork = OCMPartialMock(self.networkApi);
   [[[mockedNetwork stub] andDo:^(NSInvocation *invocation) {
     PLDNetworkCompletion block;
-    [invocation getArgument:&block atIndex:5];  // See PLDNetwork completion for indices. Note: First two are self and _cmd (NSInvocation).
+    [invocation getArgument:&block atIndex:6];  // See PLDNetwork completion for indices. Note: First two are self and _cmd (NSInvocation).
     block(mockedResponse, nil);
-  }] executeRequestWithPath:[OCMArg any]
-   method:[OCMArg any] parameters:[OCMArg any] completion:[OCMArg any]];
+  }] executeRequestWithHost:[OCMArg any]
+      path:[OCMArg any] method:[OCMArg any] parameters:[OCMArg any] completion:[OCMArg any]];
 }
 
 #pragma mark - Private

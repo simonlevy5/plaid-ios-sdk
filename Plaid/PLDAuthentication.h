@@ -33,7 +33,7 @@ typedef NS_ENUM(NSUInteger, PLDMFAType) {
 /**
  The underlying system value of this choice used to tell the Plaid system which choice was selected, such as 'phone'.
  */
-@property(nonatomic, readonly) NSString *choice;
+@property(nonatomic, readonly) id choice;
 
 @end
 

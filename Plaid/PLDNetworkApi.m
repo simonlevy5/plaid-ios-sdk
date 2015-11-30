@@ -14,6 +14,7 @@ NSString * kPlaidLinkHostTartan = @"https://link-tartan.plaid.com/";
 NSString * kPlaidLinkHostProduction = @"https://link.plaid.com/";
 
 static NSString * const kPlaidErrorDomain = @"com.parse";
+static NSUInteger const kPlaidLinkErrorCode = 600;
 
 @implementation PLDNetworkApi {
   NSString *_host;
@@ -113,6 +114,17 @@ static NSString * const kPlaidErrorDomain = @"com.parse";
   NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
   if (httpResponse.statusCode < 400) {
     return nil;
+  }
+
+  // Plaid Link error
+  NSString *errorString = responseData[@"error"];
+  if ([errorString length] > 0) {
+    NSDictionary *info = @{
+       NSLocalizedDescriptionKey : errorString
+    };
+    return [[NSError alloc] initWithDomain:kPlaidErrorDomain
+                                      code:kPlaidLinkErrorCode
+                                  userInfo:info];
   }
 
   NSInteger plaidErrorCode = [responseData[@"code"] integerValue];

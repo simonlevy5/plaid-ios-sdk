@@ -20,7 +20,7 @@
 
 - (instancetype)initWithChoiceResponseDictionary:(NSDictionary *)dictionary {
   if (self = [super init]) {
-    self.choice = dictionary[@"type"];
+    self.choice = dictionary;
     self.displayText = [NSString stringWithFormat:@"%@: %@", dictionary[@"type"], dictionary[@"mask"]];
   }
   return self;

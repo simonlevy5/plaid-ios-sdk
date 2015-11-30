@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		501060AA3877960335008552 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 303F6ECB577BFA2E00BAA4D0 /* libPods-ios.a */; };
+		5348A95A1C0CEE2C00698465 /* PLDNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5348A9591C0CEE2C00698465 /* PLDNetworkTests.m */; settings = {ASSET_TAGS = (); }; };
+		5348A9601C0CF14F00698465 /* PLDNetworkApi+Mocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5348A95F1C0CF14F00698465 /* PLDNetworkApi+Mocks.m */; settings = {ASSET_TAGS = (); }; };
 		5369A5281BDEBD7E006829D5 /* PlaidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A5271BDEBD7E006829D5 /* PlaidTests.m */; settings = {ASSET_TAGS = (); }; };
 		5369A52B1BDEE6D9006829D5 /* PLDUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A52A1BDEE6D9006829D5 /* PLDUnitTest.m */; settings = {ASSET_TAGS = (); }; };
 		5369A52E1BDEE7D4006829D5 /* Plaid+Mocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A52D1BDEE7D4006829D5 /* Plaid+Mocks.m */; settings = {ASSET_TAGS = (); }; };
@@ -17,6 +19,9 @@
 		15A2F0F97D78F7CCA95691C5 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
 		303F6ECB577BFA2E00BAA4D0 /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4940AA48F4D7CA5C739C7F4F /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		5348A9591C0CEE2C00698465 /* PLDNetworkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDNetworkTests.m; sourceTree = "<group>"; };
+		5348A95E1C0CF14F00698465 /* PLDNetworkApi+Mocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PLDNetworkApi+Mocks.h"; sourceTree = "<group>"; };
+		5348A95F1C0CF14F00698465 /* PLDNetworkApi+Mocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PLDNetworkApi+Mocks.m"; sourceTree = "<group>"; };
 		5369A50E1BDEBA67006829D5 /* ios.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5369A5121BDEBA67006829D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5369A5231BDEBD2F006829D5 /* libplaid-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libplaid-ios.a"; path = "Pods/../build/Debug-iphoneos/libplaid-ios.a"; sourceTree = "<group>"; };
@@ -63,11 +68,14 @@
 			children = (
 				5369A5121BDEBA67006829D5 /* Info.plist */,
 				5369A5271BDEBD7E006829D5 /* PlaidTests.m */,
+				5348A9591C0CEE2C00698465 /* PLDNetworkTests.m */,
 				5369A5291BDEE6D9006829D5 /* PLDUnitTest.h */,
 				5369A52A1BDEE6D9006829D5 /* PLDUnitTest.m */,
 				5369A52F1BDEECB2006829D5 /* PLDMacros.h */,
 				5369A52C1BDEE7D4006829D5 /* Plaid+Mocks.h */,
 				5369A52D1BDEE7D4006829D5 /* Plaid+Mocks.m */,
+				5348A95E1C0CF14F00698465 /* PLDNetworkApi+Mocks.h */,
+				5348A95F1C0CF14F00698465 /* PLDNetworkApi+Mocks.m */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -207,8 +215,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5369A52B1BDEE6D9006829D5 /* PLDUnitTest.m in Sources */,
+				5348A95A1C0CEE2C00698465 /* PLDNetworkTests.m in Sources */,
 				5369A52E1BDEE7D4006829D5 /* Plaid+Mocks.m in Sources */,
 				5369A5281BDEBD7E006829D5 /* PlaidTests.m in Sources */,
+				5348A9601C0CF14F00698465 /* PLDNetworkApi+Mocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
