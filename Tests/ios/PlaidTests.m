@@ -20,6 +20,7 @@ static NSString *const kTestUsernameSelections = @"plaid_selections";
 static NSString *const kTestType = @"wells";
 static NSString *const kTestAccessToken = @"test_wells";
 static NSString *const kTestPassword = @"plaid_good";
+static NSString *const kTestPin = @"1234";
 
 @interface PlaidTests : PLDUnitTest
 @end
@@ -65,6 +66,51 @@ static NSString *const kTestPassword = @"plaid_good";
                        XCTAssertTrue([[authentication accessToken] isEqualToString:@"test,wells,connected"]);
                        [expectation fulfill];
   }];
+  [self waitForTestExpectations];
+}
+
+- (void)testLinkAddUserWithOptionsSuccess {
+  [_plaid setMockedResponse:[_plaid linkAuthResponseWithType:kTestType]];
+  
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid addLinkUserForProduct:PlaidProductAuth
+                       username:kTestUsername
+                       password:kTestPassword
+                           type:kTestType
+                        options:@{ @"webhook" : @"https://blah.com", @"random" : @(true) }
+                     completion:^(PLDAuthentication *authentication,
+                                  id response,
+                                  NSError *error) {
+                       strongify(self);
+                       XCTAssertNil(error);
+                       XCTAssertEqual([authentication class], [PLDLinkAuthentication class]);
+                       XCTAssertTrue([[authentication accessToken] isEqualToString:@"test,wells,connected"]);
+                       [expectation fulfill];
+                     }];
+  [self waitForTestExpectations];
+}
+
+- (void)testLinkAddUserWithPinSuccess {
+  [_plaid setMockedResponse:[_plaid linkAuthResponseWithType:kTestType]];
+  
+  XCTestExpectation *expectation = [self currentExpectation];
+  weakify(self);
+  [_plaid addLinkUserForProduct:PlaidProductAuth
+                       username:kTestUsername
+                       password:kTestPassword
+                            pin:kTestPin
+                           type:kTestType
+                        options:nil
+                     completion:^(PLDAuthentication *authentication,
+                                  id response,
+                                  NSError *error) {
+                       strongify(self);
+                       XCTAssertNil(error);
+                       XCTAssertEqual([authentication class], [PLDLinkAuthentication class]);
+                       XCTAssertTrue([[authentication accessToken] isEqualToString:@"test,wells,connected"]);
+                       [expectation fulfill];
+                     }];
   [self waitForTestExpectations];
 }
 

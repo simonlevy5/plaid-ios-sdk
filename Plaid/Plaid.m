@@ -347,11 +347,23 @@ static NSString * LinkHostForEnvironment(PlaidEnvironment environment) {
                          type:(NSString *)type
                       options:(NSDictionary *)options
                    completion:(PlaidMfaCompletion)completion {
-  NSString *webhook = @"";
-  if (options[@"webhook"]) {
-    webhook = options[@"webhook"];
-  }
-  NSDictionary *parameters = @{
+  [self addLinkUserForProduct:product
+                     username:username
+                     password:password
+                          pin:nil
+                         type:type
+                      options:options
+                   completion:completion];
+}
+
+- (void)addLinkUserForProduct:(PlaidProduct)product
+                     username:(NSString *)username
+                     password:(NSString *)password
+                          pin:(NSString *)pin
+                         type:(NSString *)type
+                      options:(NSDictionary *)options
+                   completion:(PlaidMfaCompletion)completion {
+  NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithDictionary:@{
     @"env" : NSStringFromPlaidEnviroment(_environment),
     @"include_accounts": @(NO),
     @"institution_type": type,
@@ -359,8 +371,13 @@ static NSString * LinkHostForEnvironment(PlaidEnvironment environment) {
     @"password": password,
     @"product": NSStringFromPlaidProduct(product),
     @"public_key": _publicKey,
-    @"webhook": webhook
-  };
+  }];
+  if (options[@"webhook"]) {
+    parameters[@"webhook"] = options[@"webhook"];
+  }
+  if (pin) {
+    parameters[@"pin"] = pin;
+  }
   [_networkApi executeRequestWithHost:LinkHostForEnvironment(_environment)
                                  path:@"authenticate"
                                method:@"POST"
@@ -377,6 +394,8 @@ static NSString * LinkHostForEnvironment(PlaidEnvironment environment) {
     completion(authentication, response, error);
   }];
 }
+
+
 
 - (void)stepLinkUserForProduct:(PlaidProduct)product
                    publicToken:(NSString *)publicToken

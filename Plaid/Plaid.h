@@ -451,6 +451,14 @@ typedef void (^PlaidMfaCompletion)(PLDAuthentication *authentication, id respons
                       options:(NSDictionary *)options
                    completion:(PlaidMfaCompletion)completion;
 
+- (void)addLinkUserForProduct:(PlaidProduct)product
+                     username:(NSString *)username
+                     password:(NSString *)password
+                          pin:(NSString *)pin
+                         type:(NSString *)type
+                      options:(NSDictionary *)options
+                   completion:(PlaidMfaCompletion)completion;
+
 - (void)stepLinkUserForProduct:(PlaidProduct)product
                    publicToken:(NSString *)publicToken
                    mfaResponse:(id)mfaResponse
