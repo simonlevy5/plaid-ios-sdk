@@ -444,6 +444,17 @@ typedef void (^PlaidMfaCompletion)(PLDAuthentication *authentication, id respons
 /// @name Plaid Link endpoints. This allows login via Plaid Link.
 ///---------------------
 
+/**
+ Log a user into the Plaid Link product.
+ 
+ This completion handler calls back with a serialized PLDAuthResponse object upon successful login.
+ 
+ @param username The bank username of the user adding an account.
+ @param password The bank password of the user adding an account.
+ @param type The name of the bank the user intends to log into (i.e. wells, boa).
+ @param options Additional options passed to Plaid. This allows adding a webhook with the dictionary @{ @"webhook" : @"webhook_url" }. Can be nil.
+ @param completion The completion handler called when this request finishes. This calls with an instance of PLDAuthResponse in place of the response generic parameter if no multi-factor is required.
+ */
 - (void)addLinkUserForProduct:(PlaidProduct)product
                      username:(NSString *)username
                      password:(NSString *)password
@@ -451,6 +462,16 @@ typedef void (^PlaidMfaCompletion)(PLDAuthentication *authentication, id respons
                       options:(NSDictionary *)options
                    completion:(PlaidMfaCompletion)completion;
 
+/**
+ Log a user into the Plaid Link product. This is for institutions that explicitly require a pin code to login.
+ 
+ @param username The bank username of the user adding an account.
+ @param password The bank password of the user adding an account.
+ @param pin The bank pin code of the user adding the account (usaa only).
+ @param type The name of the bank the user intends to log into (i.e. wells, boa).
+ @param options Additional options passed to Plaid. This allows adding a webhook with the dictionary @{ @"webhook" : @"webhook_url" }. Can be nil.
+ @param completion The completion handler called when this request finishes. This calls with an instance of PLDAuthResponse in place of the response generic parameter if no multi-factor is required.
+ */
 - (void)addLinkUserForProduct:(PlaidProduct)product
                      username:(NSString *)username
                      password:(NSString *)password
@@ -459,6 +480,17 @@ typedef void (^PlaidMfaCompletion)(PLDAuthentication *authentication, id respons
                       options:(NSDictionary *)options
                    completion:(PlaidMfaCompletion)completion;
 
+/*
+ Submit the next required step of multi-factor authentication using this method, if applicable, for the Plaid Link product.
+ 
+ @param product The Plaid product being used.
+ @param publicToken Public token returned from |addLinkUserForProduct|. This is the public token only used during the multi-factor authentication process.
+ @param mfaResponse The response to the current multi-factor authentication challenge.
+ @param options Additional options passed to Plaid.
+ @param completion The completion handler called when the request finishes.
+ 
+ @see PlaidMfaCompletion
+ */
 - (void)stepLinkUserForProduct:(PlaidProduct)product
                    publicToken:(NSString *)publicToken
                    mfaResponse:(id)mfaResponse
