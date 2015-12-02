@@ -38,7 +38,9 @@
 }
 
 - (NSDictionary *)linkAuthRequiresQuestionsResponseWithType:(NSString *)type {
-  NSString *mfa = @"What type of bear is best?";
+  NSArray *mfa = @[
+    @"What type of bear is best?"
+  ];
   return [self linkResponseWithType:type status:@"requires_questions" mfa:mfa];
 }
 

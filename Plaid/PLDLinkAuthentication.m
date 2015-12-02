@@ -77,7 +77,7 @@
       self.data = responseDictionary[@"mfa"];
     } else if ([status isEqualToString:@"requires_questions"]) {
       self.type = kPLDMFATypeQuestion;
-      self.data = responseDictionary[@"mfa"];
+      self.data = [responseDictionary[@"mfa"] firstObject];
     } else if ([status isEqualToString:@"requires_selections"]) {
       self.type = kPLDMFATypeSelection;
       NSMutableArray *selections = [NSMutableArray array];
