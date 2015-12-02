@@ -20,7 +20,12 @@
 
 - (instancetype)initWithChoiceResponseDictionary:(NSDictionary *)dictionary {
   if (self = [super init]) {
-    self.choice = dictionary;
+    NSError *error;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                         options:0
+                                                           error:&error];
+    NSAssert(!error, @"Unable to parse MFA choice");
+    self.choice = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     self.displayText = [NSString stringWithFormat:@"%@: %@", dictionary[@"type"], dictionary[@"mask"]];
   }
   return self;

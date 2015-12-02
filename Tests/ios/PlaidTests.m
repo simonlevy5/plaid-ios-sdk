@@ -87,6 +87,8 @@ static NSString *const kTestPassword = @"plaid_good";
                                            withStatus:@"choose_device"
                                                  type:kPLDMFATypeList
                                                 class:[NSArray class]];
+                       XCTAssertTrue([[[authentication.mfa.data firstObject] choice]
+                                         isKindOfClass:[NSString class]]);
                        [expectation fulfill];
   }];
   [self waitForTestExpectations];
