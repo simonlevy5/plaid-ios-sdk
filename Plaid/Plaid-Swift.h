@@ -13,5 +13,6 @@
 #import "PLDCategory.h"
 #import "PLDDefines.h"
 #import "PLDInstitution.h"
+#import "PLDLinkAuthentication.h"
 #import "PLDLongTailInstitution.h"
 #import "PLDTransaction.h"

@@ -46,9 +46,38 @@ typedef void (^PlaidCompletion)(id response, NSError *error);
 typedef void (^PlaidMfaCompletion)(PLDAuthentication *authentication, id response, NSError *error);
 
 /**
-  The 'Plaid' class contains methods to configure the global Parse framework and to access the Plaid API (https://plaid.com/docs/).
+  The 'Plaid' class contains methods to configure the global Plaid framework and to access the Plaid API (https://plaid.com/docs/).
  
-  The Plaid object is a single instance object that must be configured with a clientId and secret, obtained via https://dashboard.plaid.com/signup/ , to successfully execute requests.
+  The Plaid object is a single instance object that must be configured with a public key, obtained via https://dashboard.plaid.com/signup/ , to successfully execute requests.
+ 
+  Example adding a user to Plaid:
+ 
+    #import "Plaid.h"
+
+    Plaid *plaid = [Plaid sharedInstance];
+    [plaid setPublicKey:@"your_public_key"];
+ 
+    [plaid addLinkUserForProduct:PlaidProductConnect
+                        username:@"username"
+                        password:@"test"
+                            type:@"wells"
+                         options:nil
+                      completion:^(PLDAuthentication *authentication,
+                                   id response,
+                                   NSError *error) {
+      if (error) {
+        // An error occured.
+        return;
+      }
+      if (authentication.mfa) {
+        // MFA is required. Collect MFA challenge response and submit using stepLinkUser
+        return;
+      }
+      
+      // This is a public token that can be passed to exchangeToken to receive a valid access token.
+      NSString *publicToken = authentication.accessToken;
+      // Pass publicToken to server and exchange for an accessToken.
+    }];
  */
 @interface Plaid : NSObject
 
