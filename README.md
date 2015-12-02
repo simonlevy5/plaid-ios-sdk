@@ -23,7 +23,7 @@ Run 'pod install' and you should have the latest release.
     #import "Plaid.h"
 
     Plaid *plaid = [Plaid sharedInstance];
-    [plaid setClientId:@"your_client_id" secret:@"your_secret"];
+    [plaid setPublicKey:@"your_public_key"];
     
 Extensive documentation contained in [Plaid.h header file](https://github.com/vouch/plaid-ios-sdk/blob/master/Plaid/Plaid.h).
 
