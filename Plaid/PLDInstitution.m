@@ -35,6 +35,12 @@
   return bankColor != nil ? bankColor : [UIColor darkGrayColor];
 }
 
+- (NSURL *)forgottenPasswordURL {
+  NSDictionary *urls = [PLDInstitution forgottenPasswordURLs];
+  NSString *bankURLString = [urls objectForKey:self.type];
+  return bankURLString != nil ? [NSURL URLWithString:bankURLString] : nil;
+}
+
 + (NSDictionary *)backgroundColors {
   static NSDictionary *backgroundColors = nil;
   static dispatch_once_t oncePredicate;
@@ -59,6 +65,32 @@
   });
 
   return backgroundColors;
+}
+
++ (NSDictionary *)forgottenPasswordURLs {
+  static NSDictionary *forgottenPasswordURLs = nil;
+  static dispatch_once_t oncePredicate;
+
+  dispatch_once(&oncePredicate, ^{
+    forgottenPasswordURLs = @{
+      @"amex": @"https://www.americanexpress.com/",
+      @"bofa": @"https://secure.bankofamerica.com/login/reset/entry/forgotPwdScreen.go",
+      @"capone360": @"https://secure.capitalone360.com/myaccount/banking/forgot_cif_input.vm",
+      @"chase": @"https://chaseonline.chase.com/Public/Reidentify/ReidentifyFilterView.aspx?LOB=RBGLogon",
+      @"citi": @"https://online.citibank.com/US/JSO/uidn/RequestUserIDReminder.do",
+      @"fidelity": @"https://fps.fidelity.com/ftgw/Fps/Fidelity/RtlCust/Resolve/Init",
+      @"nfcu": @"https://www.navyfederal.org/forgot_password.html",
+      @"pnc": @"https://www.onlinebanking.pnc.com/alservlet/ForgotUserIdServlet",
+      @"schwab": @"https://client.schwab.com/Areas/Login/ForgotPassword/FYPIdentification.aspx",
+      @"suntrust": @"https://onlinebanking.suntrust.com/UI/login#/forgotcredentials",
+      @"svb": @"https://www.svb.com",
+      @"td": @"https://onlinebanking.tdbank.com/default.asp",
+      @"us": @"https://onlinebanking.usbank.com/Auth/LoginAssistanceDesktop/LoadLoginAssistance",
+      @"usaa": @"https://www.usaa.com/inet/ent_proof/proofingEvent?action=Init&event=forgotPassword&wa_ref=pub_auth_nav_forgotpwd",
+      @"wells": @"https://online.wellsfargo.com/das/channel/identifyDisplay"};
+  });
+  
+  return forgottenPasswordURLs;
 }
 
 @end

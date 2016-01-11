@@ -38,4 +38,11 @@
  */
 - (UIColor *)backgroundColor;
 
+/**
+ The URL that points to a site where the user can reset their password.
+
+ @return A NSURL that points to a site where the user can reset their password.
+ */
+- (NSURL *)forgottenPasswordURL;
+
 @end
