@@ -16,7 +16,6 @@ NSString * kPlaidLinkHostTartan = @"https://link-tartan.plaid.com/";
 NSString * kPlaidLinkHostProduction = @"https://link.plaid.com/";
 
 static NSString * const kPlaidErrorDomain = @"com.parse";
-static NSUInteger const kPlaidLinkErrorCode = 600;
 
 @implementation PLDNetworkApi {
   NSString *_host;
