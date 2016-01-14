@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = "https://github.com/vouch/plaid-ios-sdk"
   s.license          = 'MIT'
-  s.author           = { "Simon Levy" => "simon@vouch.com" }
+  s.author           = { "Simon Levy" => "simon@vouch.com", "Andres Ugarte" => "andres@vouch.com" }
   s.source           = { :git => "https://github.com/vouch/plaid-ios-sdk.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '7.0'
