@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "plaid-ios-sdk"
-  s.version          = "0.3.3"
+  s.version          = "0.3.4"
   s.summary          = "iOS SDK for Plaid"
 
   s.homepage         = "https://github.com/vouch/plaid-ios-sdk"
