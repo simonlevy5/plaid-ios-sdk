@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "PLDDefines.h"
+
 /**
  Object representing a serialized version of an institution.
  
@@ -23,6 +25,26 @@
 @property(nonatomic, readonly) UIImage *logoImage;
 
 /**
+ The background color that represents the institutions color scheme.
+ */
+@property(nonatomic, readonly) UIColor *backgroundColor;
+
+/**
+ The URL that points to a site where the user can reset their password.
+ */
+@property(nonatomic, readonly) NSURL *forgottenPasswordURL;
+
+/**
+ The URL that points to a site where the user can unlock their account.
+ */
+@property(nonatomic, readonly) NSURL *accountLockedURL;
+
+/**
+ The URL that points to a site where the user can setup their account.
+ */
+@property(nonatomic, readonly) NSURL *accountSetupURL;
+
+/**
  Initializes a 'PLDInstitution' object with a dictionary that should contain the JSON response from the Plaid API.
  
  @param dictionary The dictionary representation of an institution in the Plaid system.
@@ -32,17 +54,11 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 /**
- The background color that represents the institutions color scheme.
-
- @return The UIColor that best represents this institution.
+ Determine if a product is available to this institution.
+ 
+ @param product The product which is being determined eligible.
+ @return BOOL YES if the product is available to this institution.
  */
-- (UIColor *)backgroundColor;
-
-/**
- The URL that points to a site where the user can reset their password.
-
- @return A NSURL that points to a site where the user can reset their password.
- */
-- (NSURL *)forgottenPasswordURL;
+- (BOOL)isProductAvailable:(PlaidProduct)product;
 
 @end

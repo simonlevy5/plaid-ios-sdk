@@ -61,7 +61,13 @@
 
 @implementation PLDLongTailInstitution {
   UIImage *_logo;
+  NSURL *_forgottenPasswordURL;
+  NSURL *_accountLockedURL;
+  NSURL *_accountSetupURL;
 }
+@synthesize forgottenPasswordURL = _forgottenPasswordURL;
+@synthesize accountLockedURL = _accountLockedURL;
+@synthesize accountSetupURL = _accountSetupURL;
 
 - (NSString *)type {
   return self.id;
@@ -88,7 +94,7 @@
       }
     }
     _productsAvailable = products;
-    
+
     NSMutableArray *additionalInputs = [NSMutableArray array];
     for (NSDictionary *field in dictionary[@"fields"]) {
       PLDLongTailInstitutionLoginInput *input =

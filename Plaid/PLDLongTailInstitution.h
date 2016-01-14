@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "PLDDefines.h"
 #import "PLDInstitution.h"
 
 /**
@@ -48,10 +47,6 @@
 @property(nonatomic, readonly) NSArray *productsAvailable;  // NSArray<PlaidProduct>
 @property(nonatomic, readonly) NSUInteger nameBreakPosition;
 
-@property(nonatomic, readonly) NSURL *forgottenPasswordURL;
-@property(nonatomic, readonly) NSURL *accountLockedURL;
-@property(nonatomic, readonly) NSURL *accountSetupURL;
-
 @property(nonatomic, readonly) PLDLongTailInstitutionLoginInput *usernameInput;
 @property(nonatomic, readonly) PLDLongTailInstitutionLoginInput *passwordInput;
 @property(nonatomic, readonly) NSArray *additionalLoginInputs;
@@ -65,14 +60,5 @@
  @return A new PLDLongTailInstitution instance.
  */
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-
-/**
- Determine if a product is available to this long tail institution.
- 
- @param product The product which is being determined eligible.
- 
- @return BOOL YES if the product is available to this long tail institution.
- */
-- (BOOL)isProductAvailable:(PlaidProduct)product;
 
 @end
