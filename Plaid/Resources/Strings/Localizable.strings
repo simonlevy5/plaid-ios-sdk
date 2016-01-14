@@ -3,7 +3,96 @@
   Pods
 
   Created by Simon Levy on 1/14/16.
-
 */
 
+"error_generic_title" = "Please try connecting a different account";
+"error_generic_reason" = "There was an problem processing your request. Your account could not be connected at this time.";
+"error_generic_recovery" = "Restart";
 
+"error_0_title" = "Invalid key";
+"error_0_reason" = "The public key you provided was incorrect. Your public key is available from the Plaid dashboard.";
+"error_0_recovery" = "Exit";
+
+"error_1005_title" = "Credentials missing";
+"error_1005_reason" = "Please provide a username and password.";
+"error_1005_recovery" = "Retry login";
+
+"error_1109_title" = "Sandbox Error";
+"error_1109_reason" = "In sandbox mode only sandbox credentials will be processed - i.e. plaid_test, plaid_good, plaid_locked, plaid_selections, etc.";
+"error_1109_recovery" = "Retry login";
+
+"error_1112_title" = "Addition Limit Exceeded";
+"error_1112_reason" = "The client_id associated with this account has exceeded the maximum number of additions allowed in development mode. Contact support to resolve.";
+"error_1112_recovery" = "Exit";
+
+"error_1200_title" = "The credentials you provided were incorrect";
+"error_1200_reason" = "For security reasons, your account may be locked after several unsuccessful attempts.";
+"error_1200_recovery" = "Retry login";
+
+"error_1201_title" = "The username you provided was incorrect";
+"error_1201_reason" = "For security reasons, your account may be locked after several unsuccessful attempts.";
+"error_1201_recovery" = "Retry login";
+
+"error_1202_title" = "The password you provided was incorrect";
+"error_1202_reason" = "For security reasons, your account may be locked after several unsuccessful attempts.";
+"error_1202_recovery" = "Retry login";
+
+"error_1203_title" = "Your security code was incorrect";
+"error_1203_reason" = "For security reasons, your account may be locked after several unsuccessful attempts.";
+"error_1203_recovery" = "Retry";
+
+"error_1205_title" = "Your account has been temporarily locked";
+"error_1205_reason" = "For your protection, your account has been locked. Click below to unlock your account.";
+"error_1205_recovery" = "Unlock account";
+
+"error_1206_title" = "Your account is not yet authorized for online use";
+"error_1206_reason" = "Please complete the account setup process in order to continue.";
+"error_1206_recovery" = "Setup Account";
+
+"error_1207_title" = "Account not currently supported";
+"error_1207_reason" = "Please login using a different account.";
+"error_1207_recovery" = "Return";
+
+"error_1208_title" = "Account not currently supported";
+"error_1208_reason" = "Multifactor authentication is not currently supported for this account. Please log in using a different account.";
+"error_1208_recovery" = "Return";
+
+"error_1209_title" = "The PIN you provided was incorrect";
+"error_1209_reason" = "For security reasons, your account may be locked after several unsuccessful attempts.";
+"error_1209_recovery" = "Retry login";
+
+"error_1210_title" = "Account not currently supported";
+"error_1210_reason" = "Please use a different account.";
+"error_1210_recovery" = "Return";
+
+"error_1211_title" = "Restricted SafePass";
+"error_1211_reason" = "Please disable 'Require SafePass to sign in to Online Bank' in SafePass settings to continue.";
+"error_1211_recovery" = "Return";
+
+"error_1212_title" = "Account not currently supported";
+"error_1212_reason" = "Please use a different account.";
+"error_1212_recovery" = "Return";
+
+"error_1302_title" = "No eligible accounts";
+"error_1302_reason" = "None of your accounts are eligible for money movement via ACH. Please connect using a different bank.";
+"error_1302_recovery" = "Return";
+
+"error_1303_title" = "No eligible accounts";
+"error_1303_reason" = "None of your accounts are eligible for money movement via ACH. Please connect using a different bank.";
+"error_1303_recovery" = "Return";
+
+"error_1700_title" = "No eligible accounts";
+"error_1700_reason" = "None of your accounts are eligible for money movement via ACH. Please connect using a different bank.";
+"error_1700_recovery" = "Return";
+
+"error_1701_title" = "No eligible accounts";
+"error_1701_reason" = "None of your accounts are eligible for money movement via ACH. Please connect using a different bank.";
+"error_1701_recovery" = "Return";
+
+"error_1702_title" = "No eligible accounts";
+"error_1702_reason" = "None of your accounts are eligible for money movement via ACH. Please connect using a different bank.";
+"error_1702_recovery" = "Return";
+
+"error_1800_title" = "No eligible accounts";
+"error_1800_reason" = "None of your accounts are eligible for money movement via ACH. Please connect using a different bank.";
+"error_1800_recovery" = "Return";

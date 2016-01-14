@@ -7,6 +7,8 @@
 
 #import "PLDLinkError.h"
 
+#import "NSString+Localization.h"
+
 NSString *kLinkErrorDomain = @"com.plaid.link";
 
 @implementation PLDLinkError
@@ -17,35 +19,32 @@ NSString *kLinkErrorDomain = @"com.plaid.link";
 
 - (NSString *)localizedDescription {
   PLDLinkErrorCode code = self.code;
-  switch (code) {
-    case kPLDLinkErrorInvalidKey:
-      return @"Invalid Key";
-    default:
-      break;
+  NSString *messageIdentifier = [NSString stringWithFormat:@"error_%li_title", (long)code];
+  NSString *message = [NSString stringWithIdentifier:messageIdentifier];
+  if ([message isEqualToString:messageIdentifier]) {
+    message = [NSString stringWithIdentifier:@"error_generic_title"];
   }
-  return @"Please try connecting a different account";
+  return message;
 }
 
 - (NSString *)localizedFailureReason {
   PLDLinkErrorCode code = self.code;
-  switch (code) {
-    case kPLDLinkErrorInvalidKey:
-      return @"The public key you provided was incorrect. Your public key is available from the Plaid dashboard.";
-    default:
-      break;
+  NSString *messageIdentifier = [NSString stringWithFormat:@"error_%li_reason", (long)code];
+  NSString *message = [NSString stringWithIdentifier:messageIdentifier];
+  if ([message isEqualToString:messageIdentifier]) {
+    message = [NSString stringWithIdentifier:@"error_generic_reason"];
   }
-  return @"There was an problem processing your request. Your account could not be connected at this time.";
+  return message;
 }
 
 - (NSString *)localizedRecoverySuggestion {
   PLDLinkErrorCode code = self.code;
-  switch (code) {
-    case kPLDLinkErrorInvalidKey:
-      return @"Exit";
-    default:
-      break;
+  NSString *messageIdentifier = [NSString stringWithFormat:@"error_%li_recovery", (long)code];
+  NSString *message = [NSString stringWithIdentifier:messageIdentifier];
+  if ([message isEqualToString:messageIdentifier]) {
+    message = [NSString stringWithIdentifier:@"error_generic_recovery"];
   }
-  return @"Restart";
+  return message;
 }
 
 @end
