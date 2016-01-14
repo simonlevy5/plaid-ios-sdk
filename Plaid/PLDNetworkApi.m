@@ -7,6 +7,8 @@
 
 #import "PLDNetworkApi.h"
 
+#import "PLDLinkError.h"
+
 static NSString * const kPlaidTartanHost = @"https://tartan.plaid.com/";
 static NSString * const kPlaidProductionHost = @"https://api.plaid.com/";
 
@@ -119,12 +121,8 @@ static NSUInteger const kPlaidLinkErrorCode = 600;
   // Plaid Link error
   NSString *errorString = responseData[@"error"];
   if ([errorString length] > 0) {
-    NSDictionary *info = @{
-       NSLocalizedDescriptionKey : errorString
-    };
-    return [[NSError alloc] initWithDomain:kPlaidErrorDomain
-                                      code:kPlaidLinkErrorCode
-                                  userInfo:info];
+    NSInteger plaidLinkErrorCode = [responseData[@"code"] integerValue];
+    return [PLDLinkError errorWithCode:plaidLinkErrorCode];
   }
 
   NSInteger plaidErrorCode = [responseData[@"code"] integerValue];

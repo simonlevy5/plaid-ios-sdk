@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5369A5321BE0331C006829D5 /* PLDLongTailInstitution.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A5311BE0331C006829D5 /* PLDLongTailInstitution.m */; settings = {ASSET_TAGS = (); }; };
-		5369A5381BE03B83006829D5 /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A5371BE03B83006829D5 /* UIColor+Utilities.m */; settings = {ASSET_TAGS = (); }; };
-		5369A5411BE15DA7006829D5 /* NSDictionary+Null.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A5401BE15DA7006829D5 /* NSDictionary+Null.m */; settings = {ASSET_TAGS = (); }; };
+		5369A5321BE0331C006829D5 /* PLDLongTailInstitution.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A5311BE0331C006829D5 /* PLDLongTailInstitution.m */; };
+		5369A5381BE03B83006829D5 /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A5371BE03B83006829D5 /* UIColor+Utilities.m */; };
+		5369A5411BE15DA7006829D5 /* NSDictionary+Null.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369A5401BE15DA7006829D5 /* NSDictionary+Null.m */; };
 		536B151D1BB72C8F004A026E /* Plaid.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 536B151C1BB72C8F004A026E /* Plaid.h */; };
 		536B151F1BB72C8F004A026E /* Plaid.m in Sources */ = {isa = PBXBuildFile; fileRef = 536B151E1BB72C8F004A026E /* Plaid.m */; };
-		536B15271BBC8D3D004A026E /* PLDNetworkApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 536B15261BBC8D3D004A026E /* PLDNetworkApi.m */; settings = {ASSET_TAGS = (); }; };
-		538716BD1BCD7D6200DEE44B /* PLDInstitution.m in Sources */ = {isa = PBXBuildFile; fileRef = 538716BC1BCD7D6200DEE44B /* PLDInstitution.m */; settings = {ASSET_TAGS = (); }; };
-		53994A401BD949A50083B4CB /* PLDAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A3F1BD949A50083B4CB /* PLDAccount.m */; settings = {ASSET_TAGS = (); }; };
-		53994A431BD94EC40083B4CB /* PLDTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A421BD94EC40083B4CB /* PLDTransaction.m */; settings = {ASSET_TAGS = (); }; };
-		53994A461BD9532C0083B4CB /* PLDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A451BD9532C0083B4CB /* PLDCategory.m */; settings = {ASSET_TAGS = (); }; };
-		53994A491BD964450083B4CB /* PLDAuthResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A481BD964450083B4CB /* PLDAuthResponse.m */; settings = {ASSET_TAGS = (); }; };
-		53994A4C1BD964760083B4CB /* PLDConnectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A4B1BD964760083B4CB /* PLDConnectResponse.m */; settings = {ASSET_TAGS = (); }; };
-		53B925FD1BD061F70059ABA3 /* PLDAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B925FC1BD061F70059ABA3 /* PLDAuthentication.m */; settings = {ASSET_TAGS = (); }; };
+		536B15271BBC8D3D004A026E /* PLDNetworkApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 536B15261BBC8D3D004A026E /* PLDNetworkApi.m */; };
+		538716BD1BCD7D6200DEE44B /* PLDInstitution.m in Sources */ = {isa = PBXBuildFile; fileRef = 538716BC1BCD7D6200DEE44B /* PLDInstitution.m */; };
+		53994A401BD949A50083B4CB /* PLDAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A3F1BD949A50083B4CB /* PLDAccount.m */; };
+		53994A431BD94EC40083B4CB /* PLDTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A421BD94EC40083B4CB /* PLDTransaction.m */; };
+		53994A461BD9532C0083B4CB /* PLDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A451BD9532C0083B4CB /* PLDCategory.m */; };
+		53994A491BD964450083B4CB /* PLDAuthResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A481BD964450083B4CB /* PLDAuthResponse.m */; };
+		53994A4C1BD964760083B4CB /* PLDConnectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 53994A4B1BD964760083B4CB /* PLDConnectResponse.m */; };
+		53B925FD1BD061F70059ABA3 /* PLDAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B925FC1BD061F70059ABA3 /* PLDAuthentication.m */; };
+		B1A759951C482EF50003E945 /* PLDLinkError.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A759941C482EF50003E945 /* PLDLinkError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +64,8 @@
 		53994A4B1BD964760083B4CB /* PLDConnectResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDConnectResponse.m; sourceTree = "<group>"; };
 		53B925FB1BD061F70059ABA3 /* PLDAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDAuthentication.h; sourceTree = "<group>"; };
 		53B925FC1BD061F70059ABA3 /* PLDAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDAuthentication.m; sourceTree = "<group>"; };
+		B1A759931C482EF50003E945 /* PLDLinkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkError.h; sourceTree = "<group>"; };
+		B1A759941C482EF50003E945 /* PLDLinkError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkError.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				53994A4A1BD964760083B4CB /* PLDConnectResponse.h */,
 				53994A4B1BD964760083B4CB /* PLDConnectResponse.m */,
 				536B15281BBC8F7B004A026E /* PLDDefines.h */,
+				B1A759931C482EF50003E945 /* PLDLinkError.h */,
+				B1A759941C482EF50003E945 /* PLDLinkError.m */,
 				5369A5301BE0331C006829D5 /* PLDLongTailInstitution.h */,
 				5369A5311BE0331C006829D5 /* PLDLongTailInstitution.m */,
 				536B15251BBC8D3D004A026E /* PLDNetworkApi.h */,
@@ -183,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A759951C482EF50003E945 /* PLDLinkError.m in Sources */,
 				53994A401BD949A50083B4CB /* PLDAccount.m in Sources */,
 				536B15271BBC8D3D004A026E /* PLDNetworkApi.m in Sources */,
 				5369A5381BE03B83006829D5 /* UIColor+Utilities.m in Sources */,
