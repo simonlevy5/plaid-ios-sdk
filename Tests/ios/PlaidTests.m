@@ -424,7 +424,7 @@ static NSString *const kTestPin = @"1234";
 
 - (void)testErrorStringLoading {
   NSInteger missingCredentialsCode = 1005;
-  PLDLinkError *error = [PLDLinkError errorWithCode:missingCredentialsCode];
+  NSError *error = [PLDLinkError errorWithCode:missingCredentialsCode];
 
   XCTAssertTrue([[error localizedDescription] isEqualToString:@"Credentials missing"]);
   XCTAssertTrue([[error localizedFailureReason]
@@ -434,7 +434,7 @@ static NSString *const kTestPin = @"1234";
 
 - (void)testGenericErrorStringLoading {
   NSInteger unknownCode = 1255;
-  PLDLinkError *error = [PLDLinkError errorWithCode:unknownCode];
+  NSError *error = [PLDLinkError errorWithCode:unknownCode];
 
   XCTAssertTrue([[error localizedDescription]
                     isEqualToString:@"Please try connecting a different account"]);

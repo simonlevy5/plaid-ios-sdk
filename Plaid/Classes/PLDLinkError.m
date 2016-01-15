@@ -7,7 +7,7 @@
 
 #import "PLDLinkError.h"
 
-#import "NSString+Localization.h"
+#import "NSString+PlaidLocalization.h"
 
 NSString *kLinkErrorDomain = @"com.plaid.link";
 
@@ -20,9 +20,9 @@ NSString *kLinkErrorDomain = @"com.plaid.link";
 - (NSString *)localizedDescription {
   PLDLinkErrorCode code = self.code;
   NSString *messageIdentifier = [NSString stringWithFormat:@"error_%li_title", (long)code];
-  NSString *message = [NSString stringWithIdentifier:messageIdentifier];
+  NSString *message = [NSString stringWithPlaidIdentifier:messageIdentifier];
   if ([message isEqualToString:messageIdentifier]) {
-    message = [NSString stringWithIdentifier:@"error_generic_title"];
+    message = [NSString stringWithPlaidIdentifier:@"error_generic_title"];
   }
   return message;
 }
@@ -30,9 +30,9 @@ NSString *kLinkErrorDomain = @"com.plaid.link";
 - (NSString *)localizedFailureReason {
   PLDLinkErrorCode code = self.code;
   NSString *messageIdentifier = [NSString stringWithFormat:@"error_%li_reason", (long)code];
-  NSString *message = [NSString stringWithIdentifier:messageIdentifier];
+  NSString *message = [NSString stringWithPlaidIdentifier:messageIdentifier];
   if ([message isEqualToString:messageIdentifier]) {
-    message = [NSString stringWithIdentifier:@"error_generic_reason"];
+    message = [NSString stringWithPlaidIdentifier:@"error_generic_reason"];
   }
   return message;
 }
@@ -40,9 +40,9 @@ NSString *kLinkErrorDomain = @"com.plaid.link";
 - (NSString *)localizedRecoverySuggestion {
   PLDLinkErrorCode code = self.code;
   NSString *messageIdentifier = [NSString stringWithFormat:@"error_%li_recovery", (long)code];
-  NSString *message = [NSString stringWithIdentifier:messageIdentifier];
+  NSString *message = [NSString stringWithPlaidIdentifier:messageIdentifier];
   if ([message isEqualToString:messageIdentifier]) {
-    message = [NSString stringWithIdentifier:@"error_generic_recovery"];
+    message = [NSString stringWithPlaidIdentifier:@"error_generic_recovery"];
   }
   return message;
 }

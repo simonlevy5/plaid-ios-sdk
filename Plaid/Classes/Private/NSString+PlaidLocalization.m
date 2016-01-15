@@ -1,20 +1,20 @@
 //
-//  NSString+Localization.m
+//  NSString+PlaidLocalization.m
 //  Pods
 //
 //  Created by Simon Levy on 1/14/16.
 //
 //
 
-#import "NSString+Localization.h"
+#import "NSString+PlaidLocalization.h"
 
 #import "PLDResourceBundle.h"
 
 static NSString * const kStringsFile = @"Localizable";
 
-@implementation NSString (Localization)
+@implementation NSString (PlaidLocalization)
 
-+ (NSString *)stringWithIdentifier:(NSString *)identifier {
++ (NSString *)stringWithPlaidIdentifier:(NSString *)identifier {
   NSBundle *resources = [PLDResourceBundle mainBundle];
   return [resources localizedStringForKey:identifier
                                     value:identifier
