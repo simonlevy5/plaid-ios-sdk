@@ -11,6 +11,7 @@
 
 #import "Plaid.h"
 #import "Plaid+Mocks.h"
+#import "PLDLinkError.h"
 #import "PLDMacros.h"
 #import "PLDNetworkApi.h"
 #import "PLDUnitTest.h"
@@ -419,6 +420,27 @@ static NSString *const kTestPin = @"1234";
     [expectation fulfill];
   }];
   [self waitForTestExpectations];
+}
+
+- (void)testErrorStringLoading {
+  NSInteger missingCredentialsCode = 1005;
+  PLDLinkError *error = [PLDLinkError errorWithCode:missingCredentialsCode];
+
+  XCTAssertTrue([[error localizedDescription] isEqualToString:@"Credentials missing"]);
+  XCTAssertTrue([[error localizedFailureReason]
+                   isEqualToString:@"Please provide a username and password."]);
+  XCTAssertTrue([[error localizedRecoverySuggestion] isEqualToString:@"Retry login"]);
+}
+
+- (void)testGenericErrorStringLoading {
+  NSInteger unknownCode = 1255;
+  PLDLinkError *error = [PLDLinkError errorWithCode:unknownCode];
+
+  XCTAssertTrue([[error localizedDescription]
+                    isEqualToString:@"Please try connecting a different account"]);
+  XCTAssertTrue([[error localizedFailureReason]
+                   isEqualToString:@"There was an problem processing your request. Your account could not be connected at this time."]);
+  XCTAssertTrue([[error localizedRecoverySuggestion] isEqualToString:@"Restart"]);
 }
 
 #pragma mark - Utilities

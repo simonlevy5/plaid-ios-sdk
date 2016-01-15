@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.resource_bundle = { 'Resources' => ['Plaid/Resources/Strings/*.strings'] }
+  s.resource_bundle = { 'PLDResources' => ['Plaid/Resources/Strings/*.strings'] }
   s.source_files = 'Plaid/Classes/**/*'
   s.public_header_files = 'Plaid/Classes/*.h'
 end
